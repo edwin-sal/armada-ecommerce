@@ -1,6 +1,7 @@
 import products from './products.js'
 
 let selectedCategory = 'all';
+let selectedPriceOrder = 'random-price';
 
 function renderProductsContainer() {
 	const productContainer = document.querySelector('.products-container');
@@ -8,9 +9,16 @@ function renderProductsContainer() {
 
 	// Filter products based on category
 	if(selectedCategory !== 'all') {
-		filteredProducts = products.filter(product => (product.category === selectedCategory));
+		filteredProducts = filteredProducts.filter(product => (product.category === selectedCategory));
 	}
-	
+
+	if(selectedPriceOrder !== 'random-price') {
+		if(selectedPriceOrder === 'low-to-high') {
+			filteredProducts.sort((a, b) => a.price - b.price);
+		} else {
+			filteredProducts.sort((a, b) => b.price - a.price);
+		}
+	}
 
 	// Render the products
 	let productElements = '';
@@ -58,6 +66,9 @@ function renderProductsContainer() {
 			quickAddButton.style.display = 'none';
 		});
 	});
+
+	console.log(selectedCategory);
+	console.log(selectedPriceOrder);
 };
 
 /* Show/Hide dropdown containers by pressing the dropdown button */
@@ -83,11 +94,22 @@ document.querySelectorAll('.dropdown-button').forEach(button => {
 document.querySelector('.category-items').querySelectorAll('label input').forEach(input => {
 	input.addEventListener('change', function(event) {
 		const category = event.target.value;
-		console.log(`Selected value: ${category}`);
+		// console.log(`Selected value: ${category}`);
 
 		// Update the selectedCategory
 		selectedCategory = category;
 		renderProductsContainer()
+	});
+})
+
+/* Sort the products by price */
+document.querySelector('.price-items').querySelectorAll('label input').forEach(input => {
+	input.addEventListener('change', function(event) {
+		const priceOrder = event.target.value;
+		// console.log(`Selected value: ${priceOrder}`);
+
+		selectedPriceOrder = priceOrder;
+		renderProductsContainer();
 	});
 })
 

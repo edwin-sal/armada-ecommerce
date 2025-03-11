@@ -168,7 +168,7 @@ aside {
 }
 
 .category-items,
-.color-items {
+.price-items {
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -177,7 +177,7 @@ aside {
 }
 
 .category-items label,
-.color-items label {
+.price-items label {
 	font-size: 0.875rem;
 	display: flex;
 	align-items: center;
@@ -190,7 +190,7 @@ aside {
 }
 
 .category-items label:hover,
-.color-items label:hover {
+.price-items label:hover {
 	background-color: #fafafa;
 }
 
@@ -271,7 +271,7 @@ aside {
 	background-color: #ff9e95;
 	border: none;
 	padding: 1rem;
-	color: white;
+	color: #2b1b19;
 	width: 100%;
 	font-weight: 500;
 	cursor: pointer;

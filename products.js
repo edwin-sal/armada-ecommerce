@@ -8,6 +8,7 @@ let products = [
 		price: 8999,
 		category: 'revolver',
 		caliber: 'revolver-caliber',
+		color: 'dark-gray',
 	},
 	{
 		id: 1,
@@ -18,6 +19,7 @@ let products = [
 		price: 51699,
 		category: 'shotgun',
 		caliber: 'shotgun-caliber',
+		color: 'wood',
 	},
 	{
 		id: 2,
@@ -28,6 +30,7 @@ let products = [
 		price:94250,
 		category: 'pistol',
 		caliber: 'pistol-caliber',
+		color: 'silver',
 	},
 	{
 		id: 3,
@@ -38,6 +41,7 @@ let products = [
 		price: 24000,
 		category: 'assault-rifle',
 		caliber: 'assault-rifle-caliber',
+		color: 'dark-gray',
 	},
 	
 	{
@@ -49,6 +53,7 @@ let products = [
 		price: 30979,
 		category: 'pistol',
 		caliber: 'pistol-caliber',
+		color: 'dark-gray',
 	},
 	{
 		id: 5,
@@ -59,6 +64,7 @@ let products = [
 		price: 16999,
 		category: 'revolver',
 		caliber: 'revolver-caliber',
+		color: 'silver',
 	},
 	{
 		id: 6,
@@ -69,6 +75,7 @@ let products = [
 		price: 30999,
 		category: 'assault-rifle',
 		caliber: 'assault-rifle-caliber',
+		color: 'black',
 	},
 	{
 		id: 7,
@@ -79,6 +86,7 @@ let products = [
 		price: 63799,
 		category: 'revolver',
 		caliber: 'revolver-caliber',
+		color: 'black',
 	},
 	{
 		id: 8,
@@ -89,6 +97,7 @@ let products = [
 		price: 164000,
 		category: 'assault-rifle',
 		caliber: 'assault-rifle-caliber',
+		color: 'desert',
 	},
 	{
 		id: 9,
@@ -99,6 +108,7 @@ let products = [
 		price: 215000,
 		category: 'sniper-rifle',
 		caliber: 'sniper-rifle-caliber',
+		color: 'jungle',
 	},
 	
 	{
@@ -110,16 +120,18 @@ let products = [
 		price: 15500,
 		category: 'pistol',
 		caliber: 'pistol-caliber',
+		color: 'silver',
 	},
 	{
 		id: 11,
-		imageURL: 'https://www.brownells.com/cdn-cgi/image/width=178,format=auto,fit=crop/globalassets/10001/65/430105543_1w.jpg',
-		name: 'UBERTI - 1875 NO. 3 TOP-BREAK 45 COLT REVOLVER',
+		imageURL: 'https://www.deguns.net/_next/image?url=https%3A%2F%2Fcdn11.bigcommerce.com%2Fs-cmh6pcyhu%2Fimages%2Fstencil%2Foriginal%2Fproducts%2F88877%2F146111%2F1-min_3__46860.1741374339.png&w=828&q=65',
+		name: 'Ruger 18105 Precision 6.5 PRC 10+1 26" Black Threaded Barrel, Smoked Bronze Rifle',
 		ratings: 5,
 		sold: 1,
 		price: 149899,
-		category: 'revolver',
-		caliber: 'revolver-caliber',
+		category: 'sniper',
+		caliber: 'sniper-rifle-caliber',
+		color: 'desert',
 	},
 	{
 		id: 12,
@@ -130,6 +142,7 @@ let products = [
 		price: 24995,
 		category: 'shotgun',
 		caliber: 'shotgun-caliber',
+		color: 'black',
 	},
 	{
 		id: 13,
@@ -140,6 +153,7 @@ let products = [
 		price: 28550,
 		category: 'pistol',
 		caliber: 'pistol-caliber',
+		color: 'black',
 	},
 	{
 		id: 14,
@@ -150,6 +164,7 @@ let products = [
 		price: 109000,
 		category: 'assault-rifle',
 		caliber: 'assault-rifle-caliber',
+		color: 'dark-gray',
 	},
 	{
 		id: 15,
@@ -160,6 +175,7 @@ let products = [
 		price: 88499,
 		category: 'sniper-rifle',
 		caliber: 'sniper-rifle-caliber',
+		color: 'jungle',
 	},
 	
 	{
@@ -171,6 +187,7 @@ let products = [
 		price: 12550,
 		category: 'submachine-gun',
 		caliber: 'pistol-rifle-caliber',
+		color: 'black',
 	},
 	{
 		id: 17,
@@ -181,6 +198,7 @@ let products = [
 		price: 10499,
 		category: 'shotgun',
 		caliber: 'shotgun-caliber',
+		color: 'jungle',
 	},
 	{
 		id: 18,
@@ -191,6 +209,7 @@ let products = [
 		price: 33500,
 		category: 'pistol',
 		caliber: 'pistol-caliber',
+		color: 'black',
 	},
 	{
 		id: 19,
@@ -201,6 +220,7 @@ let products = [
 		price: 199499,
 		category: 'sniper-rifle',
 		caliber: 'sniper-rifle-caliber',
+		color: 'jungle',
 	},
 	
 	{
@@ -212,6 +232,7 @@ let products = [
 		price: 26000,
 		category: 'shotgun',
 		caliber: 'shotgun-caliber',
+		color: 'dark-gray',
 	},
 	{
 		id: 21,
@@ -222,6 +243,7 @@ let products = [
 		price: 11999,
 		category: 'submachine-gun',
 		caliber: 'pistol-caliber',
+		color: 'black',
 	},
 	{
 		id: 22,
@@ -232,6 +254,7 @@ let products = [
 		price: 26500,
 		category: 'sniper-rifle',
 		caliber: 'sniper-rifle-caliber',
+		color: 'dark-gray',
 	},
 	{
 		id: 23,
@@ -242,6 +265,7 @@ let products = [
 		price: 41999,
 		category: 'submachine-gun',
 		caliber: 'pistol-caliber',
+		color: 'black',
 	},
 	{
 		id: 24,
@@ -252,6 +276,7 @@ let products = [
 		price: 7200,
 		category: 'shotgun',
 		caliber: 'shotgun-caliber',
+		color: 'wood',
 	},
 	{
 		id: 25,
@@ -262,6 +287,7 @@ let products = [
 		price: 47000,
 		category: 'submachine-gun',
 		caliber: 'pistol-caliber',
+		color: 'black',
 	},
 	{
 		id: 26,
@@ -272,6 +298,7 @@ let products = [
 		price: 41450,
 		category: 'pistol',
 		caliber: 'pistol-caliber',
+		color: 'dark-gray',
 	},
 	{
 		id: 27,
@@ -282,6 +309,7 @@ let products = [
 		price: 11999,
 		category: 'revolver',
 		caliber: 'revolver-caliber',
+		color: 'silver',
 	},
 	{
 		id: 28,
@@ -292,6 +320,7 @@ let products = [
 		price: 42199,
 		category: 'assault-rifle',
 		caliber: 'assault-rifle-caliber',
+		color: 'wood',
 	},
 	{
 		id: 29,
@@ -302,6 +331,7 @@ let products = [
 		price: 51250,
 		category: 'sniper-rifle',
 		caliber: 'sniper-rifle-caliber',
+		color: 'wood',
 	},
 	{
 		id: 30,
@@ -312,6 +342,7 @@ let products = [
 		price: 39999,
 		category: 'submachine-gun',
 		caliber: 'pistol-caliber',
+		color: 'black',
 	},
 ];
 
