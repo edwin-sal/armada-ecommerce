@@ -1,11 +1,20 @@
 import products from './products.js'
 
-const productContainer = document.querySelector('.products-container');
+let selectedCategory = 'all';
 
-// Render the products
-function renderProductElements() {
-let productElements = '';
-	products.forEach(product => {
+function renderProductsContainer() {
+	const productContainer = document.querySelector('.products-container');
+	let filteredProducts = [...products];
+
+	// Filter products based on category
+	if(selectedCategory !== 'all') {
+		filteredProducts = products.filter(product => (product.category === selectedCategory));
+	}
+	
+
+	// Render the products
+	let productElements = '';
+	filteredProducts.forEach(product => {
 		productElements += `
 			<li>
 				<a href="#" class="product">
@@ -35,24 +44,23 @@ let productElements = '';
 	});
 
 	productContainer.innerHTML = productElements;
+
+
+	/* Display the add to cart button for each product */
+	productContainer.querySelectorAll('li').forEach(product => {
+		const quickAddButton = product.querySelector('.quick-add-to-cart');
+
+		product.addEventListener('mouseover', function() {
+			quickAddButton.style.display = 'block';
+		});
+
+		product.addEventListener('mouseout', function() {
+			quickAddButton.style.display = 'none';
+		});
+	});
 };
 
-
-/* Display the add to cart button for each product */
-productContainer.querySelectorAll('li').forEach(product => {
-	// console.log(product);
-	const quickAddButton = product.querySelector('.quick-add-to-cart');
-
-	product.addEventListener('mouseover', function() {
-		quickAddButton.style.display = 'block';
-	});
-
-	product.addEventListener('mouseout', function() {
-		quickAddButton.style.display = 'none';
-	});
-});
-
-/* Add event listener for the sidebar dropdown buttons */
+/* Show/Hide dropdown containers by pressing the dropdown button */
 document.querySelectorAll('.dropdown-button').forEach(button => {
 	button.addEventListener('click', function() {
 		const currentMode = this.getAttribute('data-current-mode');
@@ -61,7 +69,7 @@ document.querySelectorAll('.dropdown-button').forEach(button => {
 		const removeSrc = this.getAttribute('data-remove-src');
 		const buttonIcon = this.querySelector('img');
 
-		// Display/Hide either category/caliber list depending on the current status of the button 
+		// Display/Hide either category/color list depending on the current status of the button 
 		document.querySelector(`.${type}-items`).style.display = `${currentMode === 'hide' ? 'block' : 'none'}`;
 		this.setAttribute('data-current-mode', `${currentMode === 'hide' ? 'show' : 'hide'}`);
 
@@ -71,4 +79,16 @@ document.querySelectorAll('.dropdown-button').forEach(button => {
 	});
 });
 
-renderProductElements();
+/* Sort the products by category */
+document.querySelector('.category-items').querySelectorAll('label input').forEach(input => {
+	input.addEventListener('change', function(event) {
+		const category = event.target.value;
+		console.log(`Selected value: ${category}`);
+
+		// Update the selectedCategory
+		selectedCategory = category;
+		renderProductsContainer()
+	});
+})
+
+renderProductsContainer(products);

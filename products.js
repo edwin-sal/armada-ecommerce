@@ -1,4 +1,4 @@
-const products = [
+let products = [
 	{
 		id: 0,
 		imageURL: 'https://www.brownells.com/cdn-cgi/image/width=178,format=auto,fit=crop/globalassets/10001/81/430105407_1w.jpg',

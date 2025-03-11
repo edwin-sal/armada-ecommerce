@@ -168,16 +168,16 @@ aside {
 }
 
 .category-items,
-.caliber-items {
+.color-items {
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
-	display: none;
+	/* display: none; */
 }
 
 .category-items label,
-.caliber-items label {
+.color-items label {
 	font-size: 0.875rem;
 	display: flex;
 	align-items: center;
@@ -190,7 +190,7 @@ aside {
 }
 
 .category-items label:hover,
-.caliber-items label:hover {
+.color-items label:hover {
 	background-color: #fafafa;
 }
 
