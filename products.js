@@ -1,14 +1,20 @@
 let products = [
 	{
 		id: 0,
-		imageURL: 'https://www.brownells.com/cdn-cgi/image/width=178,format=auto,fit=crop/globalassets/10001/81/430105407_1w.jpg',
-		name: 'SMITH & WESSON - MODEL 637 J-FRAME 38 S&W SPECIAL REVOLVER',
+		imageURL: 'https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg',
+		name: 'NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER',
 		ratings: 2.5,
 		sold: 8,
 		price: 8999,
 		category: 'revolver',
 		caliber: 'revolver-caliber',
 		color: 'dark-gray',
+		otherImages: [
+			'https://upload.wikimedia.org/wikipedia/commons/8/87/Ruger_Blackhawk_Convertible.jpg',
+			'https://ruger.com/products/newModelBlackhawkConvertible/images/0318.jpg',
+			'https://exhaustnotes.us/blog/wp-content/uploads/2022/09/20220919_0003-900-1.jpg',
+		],
+		description: 'Introducing the New Model Blackhawk .357 Magnum Single Action Revolver, a perfect blend of classic design and modern performance. Crafted with precision, this revolver features a robust stainless steel frame and a striking blued finish, ensuring durability and elegance. Its smooth single-action trigger provides exceptional accuracy, making it ideal for both target shooting and hunting. The adjustable rear sights allow for easy customization, while the comfortable grip enhances control and stability. Experience the power and reliability of the Blackhawk, a timeless choice for firearm enthusiasts.',
 	},
 	{
 		id: 1,
