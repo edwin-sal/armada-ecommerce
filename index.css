@@ -173,7 +173,7 @@ aside {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
-	display: none;
+	/* display: none; */
 }
 
 .category-items label,
