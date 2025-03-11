@@ -9,6 +9,11 @@
 body {
 	font-family: "Noto Sans", sans-serif;
 	/* background-color: #f3f8fd; */
+	min-height: 100dvh;
+	height: fit-content;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
 }
 
 header {
@@ -108,10 +113,11 @@ header {
 }
 
 main {
+	flex: 1;
 	max-width: 1300px;
 	margin: 0 auto;
 	display: flex;
-	background-color: white;
+	background-color: #ffffff;
 }
 
 aside {
@@ -119,7 +125,6 @@ aside {
 	width: 100%;
 	background-color: white;
 	padding: 1rem;
-	border-right: 1px solid lightgray;
 }
 
 .filter-container {
@@ -184,4 +189,84 @@ aside {
 
 .category-items label:hover {
 	background-color: #fafafa;
+}
+
+.products-section {
+	flex: 1;
+	border-left: 1px solid lightgray;
+}
+
+.products-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+	list-style: none;
+	gap: 1rem;
+	padding: 1rem;
+	align-items: stretch;
+}
+
+.products-container li {
+	position: relative;
+}
+
+.product {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+	color: #2b1b19;
+	border: 1px solid transparent;
+}
+
+.product:hover {
+	border: 1px solid #ff9e95;
+}
+
+.stars-container img {
+	width: 0.875rem;
+}
+
+.product-info {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.product-info h4 {
+	display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	height: 3em; /* Adjust based on line height */
+    line-height: 1.5em; /* Adjust spacing */
+
+}
+
+.price-rating-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.price {
+	color: #ff9e95;
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.quick-add-to-cart {
+	font-family: inherit;
+	font-size: 1rem;
+	background-color: #ff9e95;
+	border: none;
+	padding: 1rem;
+	color: white;
+	width: 100%;
+	font-weight: 500;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+	display: none;
 }
