@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Noto Sans", sans-serif;
+	background-color: #f3f8fd;
+}
+
+header {
+	background-color: white;
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+	padding: 2rem 10px;
+	max-width: 1300px;
+	margin: 0 auto;
+	gap: 1rem;
+}
+
+.header-logo {
+	max-width: 170px;
+}
+
+.search-bar {
+	flex-grow: 1;
+	display: flex;
+	height: 3.5rem;
+	margin: 0 4rem;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.search-bar input {
+	width: 100%;
+	font-family: inherit;
+	font-size: 1rem;
+	background-color: #eff0f5;
+	border: none;
+	outline: none;
+	color: #2b1b19;
+	padding: 1rem;
+}
+
+.search-bar button {
+	border: none;
+	background-color: #2b1b19;
+	cursor: pointer;
+	padding: 1rem;
+}
+
+.search-bar button img {
+	width: 1rem;
+}
+
+.cart-link {
+	height: 3.5rem;
+	text-decoration: none;
+	background-color: #2b1b19;
+	color: white;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+.cart-link:hover {
+	text-decoration: underline;
+}
+
+.cart-link img {
+	width: 1.3rem;
+}
+
+.profile-container {
+	font-weight: 500;
+	font-size: 1.3rem;
+	color: #2b1b19;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	font-family: inherit;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.profile-name {
+	font-size: 1rem;
+}
+
+.profile-rounded {
+	width: 3rem;
+    height: 3rem; 
+	line-height: 3rem;
+	text-align: center;
+	display: inline-block;
+	background-color: rgba(43, 27, 25, 0.7);
+	border-radius: 50%;
+}
+
+main {
+	
+	max-width: 1300px;
+}
