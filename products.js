@@ -6,7 +6,8 @@ const products = [
 		ratings: 2.5,
 		sold: 8,
 		price: 8999,
-		category: 'revolver'
+		category: 'revolver',
+		caliber: 'revolver-caliber',
 	},
 	{
 		id: 1,
@@ -15,7 +16,8 @@ const products = [
 		ratings: 4,
 		sold: 89,
 		price: 51699,
-		category: 'shotgun'
+		category: 'shotgun',
+		caliber: 'shotgun-caliber',
 	},
 	{
 		id: 2,
@@ -24,7 +26,8 @@ const products = [
 		ratings: 3.5,
 		sold: 67,
 		price:94250,
-		category: 'pistol'
+		category: 'pistol',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 3,
@@ -33,7 +36,8 @@ const products = [
 		ratings: 5,
 		sold: 71,
 		price: 24000,
-		category: 'assault-rifle'
+		category: 'assault-rifle',
+		caliber: 'assault-rifle-caliber',
 	},
 	
 	{
@@ -43,7 +47,8 @@ const products = [
 		ratings: 5,
 		sold: 18,
 		price: 30979,
-		category: 'pistol'
+		category: 'pistol',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 5,
@@ -52,7 +57,8 @@ const products = [
 		ratings: 5, 
 		sold: 3,
 		price: 16999,
-		category: 'revolver'
+		category: 'revolver',
+		caliber: 'revolver-caliber',
 	},
 	{
 		id: 6,
@@ -61,7 +67,8 @@ const products = [
 		ratings: 3.5,
 		sold: 26,
 		price: 30999,
-		category: 'assault-rifle'
+		category: 'assault-rifle',
+		caliber: 'assault-rifle-caliber',
 	},
 	{
 		id: 7,
@@ -70,7 +77,8 @@ const products = [
 		ratings: 5,
 		sold: 3,
 		price: 63799,
-		category: 'revolver'
+		category: 'revolver',
+		caliber: 'revolver-caliber',
 	},
 	{
 		id: 8,
@@ -79,7 +87,8 @@ const products = [
 		ratings: 4.5,
 		sold: 22,
 		price: 164000,
-		category: 'assault-rifle'
+		category: 'assault-rifle',
+		caliber: 'assault-rifle-caliber',
 	},
 	{
 		id: 9,
@@ -88,7 +97,8 @@ const products = [
 		ratings: 5,
 		sold: 71,
 		price: 215000,
-		category: 'sniper-rifle'
+		category: 'sniper-rifle',
+		caliber: 'sniper-rifle-caliber',
 	},
 	
 	{
@@ -98,7 +108,8 @@ const products = [
 		ratings: 4.5, 
 		sold: 21,
 		price: 15500,
-		category: 'pistol'
+		category: 'pistol',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 11,
@@ -107,7 +118,8 @@ const products = [
 		ratings: 5,
 		sold: 1,
 		price: 149899,
-		category: 'revolver'
+		category: 'revolver',
+		caliber: 'revolver-caliber',
 	},
 	{
 		id: 12,
@@ -116,7 +128,8 @@ const products = [
 		ratings: 1.5,
 		sold: 2,
 		price: 24995,
-		category: 'shotgun'
+		category: 'shotgun',
+		caliber: 'shotgun-caliber',
 	},
 	{
 		id: 13,
@@ -125,7 +138,8 @@ const products = [
 		ratings: 3,
 		sold: 1,
 		price: 28550,
-		category: 'pistol'
+		category: 'pistol',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 14,
@@ -134,7 +148,8 @@ const products = [
 		ratings: 5,
 		sold: 41,
 		price: 109000,
-		category: 'assault-rifle'
+		category: 'assault-rifle',
+		caliber: 'assault-rifle-caliber',
 	},
 	{
 		id: 15,
@@ -143,7 +158,8 @@ const products = [
 		ratings: 4,
 		sold: 31,
 		price: 88499,
-		category: 'sniper-rifle'
+		category: 'sniper-rifle',
+		caliber: 'sniper-rifle-caliber',
 	},
 	
 	{
@@ -153,7 +169,8 @@ const products = [
 		ratings: 4.5,
 		sold: 317,
 		price: 12550,
-		category: 'pistol'
+		category: 'submachine-gun',
+		caliber: 'pistol-rifle-caliber',
 	},
 	{
 		id: 17,
@@ -162,7 +179,8 @@ const products = [
 		ratings: 5,
 		sold: 92,
 		price: 10499,
-		category: 'shotgun'
+		category: 'shotgun',
+		caliber: 'shotgun-caliber',
 	},
 	{
 		id: 18,
@@ -171,7 +189,8 @@ const products = [
 		ratings: 4.5,
 		sold: 206,
 		price: 33500,
-		category: 'pistol'
+		category: 'pistol',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 19,
@@ -180,7 +199,8 @@ const products = [
 		ratings: 5,
 		sold: 34,
 		price: 199499,
-		category: 'sniper-rifle'
+		category: 'sniper-rifle',
+		caliber: 'sniper-rifle-caliber',
 	},
 	
 	{
@@ -190,7 +210,8 @@ const products = [
 		ratings: 5,
 		sold: 301,
 		price: 26000,
-		category: 'shotgun'
+		category: 'shotgun',
+		caliber: 'shotgun-caliber',
 	},
 	{
 		id: 21,
@@ -199,7 +220,8 @@ const products = [
 		ratings: 5,
 		sold: 7,
 		price: 11999,
-		category: 'pistol'
+		category: 'submachine-gun',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 22,
@@ -208,7 +230,8 @@ const products = [
 		ratings: 3.5,
 		sold: 77,
 		price: 26500,
-		category: 'sniper-rifle'
+		category: 'sniper-rifle',
+		caliber: 'sniper-rifle-caliber',
 	},
 	{
 		id: 23,
@@ -217,7 +240,8 @@ const products = [
 		ratings: 3.5,
 		sold: 17,
 		price: 41999,
-		category: 'pistol'
+		category: 'submachine-gun',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 24,
@@ -226,7 +250,8 @@ const products = [
 		ratings: 3,
 		sold: 11,
 		price: 7200,
-		category: 'shotgun'
+		category: 'shotgun',
+		caliber: 'shotgun-caliber',
 	},
 	{
 		id: 25,
@@ -235,7 +260,8 @@ const products = [
 		ratings: 4,
 		sold: 13,
 		price: 47000,
-		category: 'pistol'
+		category: 'submachine-gun',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 26,
@@ -244,7 +270,8 @@ const products = [
 		ratings: 5,
 		sold: 101,
 		price: 41450,
-		category: 'pistol'
+		category: 'pistol',
+		caliber: 'pistol-caliber',
 	},
 	{
 		id: 27,
@@ -253,7 +280,8 @@ const products = [
 		ratings: 4.5,
 		sold: 89,
 		price: 11999,
-		category: 'revolver'
+		category: 'revolver',
+		caliber: 'revolver-caliber',
 	},
 	{
 		id: 28,
@@ -262,7 +290,8 @@ const products = [
 		ratings: 5,
 		sold: 728,
 		price: 42199,
-		category: 'assault-rifle'
+		category: 'assault-rifle',
+		caliber: 'assault-rifle-caliber',
 	},
 	{
 		id: 29,
@@ -271,7 +300,8 @@ const products = [
 		ratings: 2,
 		sold: 3,
 		price: 51250,
-		category: 'sniper-rifle'
+		category: 'sniper-rifle',
+		caliber: 'sniper-rifle-caliber',
 	},
 	{
 		id: 30,
@@ -280,7 +310,8 @@ const products = [
 		ratings: 5,
 		sold: 6,
 		price: 39999,
-		category: 'pistol'
+		category: 'submachine-gun',
+		caliber: 'pistol-caliber',
 	},
 ];
 
