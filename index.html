@@ -3,9 +3,162 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Armada Ecommerce</title>
+	<title>Bang & Bang</title>
+	<link rel="stylesheet" href="./index.css">
 </head>
 <body>
-	
+	<header>
+		<div class="header-content">
+			<a href="./index.html">
+				<img class="header-logo" src="./images/logos/logo_transparent.png" alt="Bang & bang logo">
+			</a>
+
+			<form class="search-bar">
+				<input type="text" placeholder="Find your perfect firearm">
+				<button type="submit">
+					<img src="./images/icons/search.svg" alt="Search icon">
+				</button>
+			</form>
+
+			<a class="cart-link" href="./cart.html">
+				<img src="./images/icons/cart_white.svg" alt="Shopping cart icon">
+				Cart (0)
+			</a>
+
+			<button class="profile-container">
+				<span class="profile-rounded">ES</span>
+			</button>
+		</div>
+	</header>
+
+	<main>
+		<aside>
+			<ul class="filter-container">
+				<li class="dropdown">
+					<button class="dropdown-button" data-current-mode="show" data-type="category" data-add-src="add_pink.svg" data-remove-src="remove_pink.svg">
+						Category
+						<img src="./images/icons/remove_pink.svg" alt="Add icon">
+					</button>
+					
+				</li>
+				<li class="category-items">
+					<label for="all">
+						<input type="radio" id="all" name="category" value="all" checked>
+						All
+					</label>
+
+					<label for="revolver">
+						<input type="radio" id="revolver" name="category" value="revolver">
+						Revolver
+					</label>
+
+					<label for="pistol">
+						<input type="radio" id="pistol" name="category" value="pistol">
+						Pistol
+					</label>
+
+					<label for="shotgun">
+						<input type="radio" id="shotgun" name="category" value="shotgun">
+						Shotgun
+					</label>
+
+					<label for="submachine-gun">
+						<input type="radio" id="submachine-gun" name="category" value="submachine-gun">
+						Submachine gun
+					</label>
+
+					<label for="assault-rifle">
+						<input type="radio" id="assault-rifle" name="category" value="assault-rifle">
+						Assault rifle
+					</label>
+
+					<label for="sniper-rifle">
+						<input type="radio" id="sniper-rifle" name="category" value="sniper-rifle">
+						Sniper rifle
+					</label>
+				</li>
+
+				<li class="dropdown">
+					<button class="dropdown-button" data-current-mode="show" data-type="price" data-add-src="add_pink.svg" data-remove-src="remove_pink.svg">
+						Price
+						<img src="./images/icons/remove_pink.svg" alt="Add icon">
+					</button>
+				</li>
+				<li class="price-items">
+					<label for="randopm-price">
+						<input type="radio" id="randopm-price" name="price-sort" value="random-price" checked>
+						Random
+					</label>
+
+					<label for="low-to-high">
+						<input type="radio" id="low-to-high" name="price-sort" value="low-to-high">
+						Low to High
+					</label>
+
+					<label for="high-to-low">
+						<input type="radio" id="high-to-low" name="price-sort" value="high-to-low">
+						High to Low
+					</label>
+
+					<!-- <label for="revolver-caliber">
+						<input type="radio" id="revolver-caliber" name="caliber" value="revolver-caliber">
+						.38 Special
+					</label>
+
+					<label for="pistol-caliber">
+						<input type="radio" id="pistol-caliber" name="caliber" value="pistol-caliber">
+						9mm
+					</label>
+
+					<label for="shotgun-caliber">
+						<input type="radio" id="shotgun-caliber" name="caliber" value="shotgun-caliber">
+						12 Guage
+					</label>
+
+					<label for="assault-rifle-caliber">
+						<input type="radio" id="assault-rifle-caliber" name="caliber" value="assault-rifle-caliber">
+						Assault rifle
+					</label>
+
+					<label for="sniper-rifle-caliber">
+						<input type="radio" id="sniper-rifle-caliber" name="caliber" value="sniper-rifle-caliber">
+						.308
+					</label> -->
+				</li>
+			</ul>
+		</aside>
+		
+		<section class="products-section">
+			<ul class="products-container">
+				<!-- <li>
+					<a href="#" class="product">
+						<img class="product-img" src="https://www.silencershop.com/media/catalog/product/cache/6d6745aab1281926e9fd163d9d2d1716/m/k/mkiv_target_threaded-blk.jpg" alt="Product image">
+
+						<div class="product-info">
+							<h4>MARK IV TARGET THREADED 22LR MARK IV TARGET THREADED 22LR MARK IV TARGET THREADED 22LR MARK IV TARGET THREADED 22LR</h4>
+
+							<span class="price">₱30979.53</span>
+
+							<div class="price-rating-container">
+								<div class="stars-container">
+									<img src="./images/icons/star-solid.svg" alt="Star icon">
+									<img src="./images/icons/star-solid.svg" alt="Star icon">
+									<img src="./images/icons/star-solid.svg" alt="Star icon">
+									<img src="./images/icons/star-solid.svg" alt="Star icon">
+									<img src="./images/icons/star-solid.svg" alt="Star icon">
+								</div>
+
+								<span class="sold">18 sold</span>
+							</div>
+						</div>
+					</a>
+					<button class="quick-add-to-cart">Add to Cart</button>
+				</li> -->
+			</ul>
+		</section>
+	</main>
+
+	<script type="module" src="./products.js"></script>
+	<script type="module" src="./homepage.js"></script>
 </body>
 </html>
