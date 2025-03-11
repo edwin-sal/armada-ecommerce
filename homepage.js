@@ -31,7 +31,7 @@ function renderProductsContainer() {
 					<div class="product-info">
 						<h4>${product.name}</h4>
 
-						<span class="price">₱${product.price}</span>
+						<span class="price">₱${product.price.toLocaleString()}</span>
 
 						<div class="price-rating-container">
 							<div class="stars-container">
