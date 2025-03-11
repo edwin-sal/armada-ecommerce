@@ -10,7 +10,7 @@
 	<header>
 		<div class="header-content">
 			<a href="./index.html">
-				<img class="header-logo" src="./images/logos/logo_transparent_choco.png" alt="Bang & bang logo">
+				<img class="header-logo" src="./images/logos/logo_transparent.png" alt="Bang & bang logo">
 			</a>
 
 			<form class="search-bar">
@@ -34,11 +34,14 @@
 	<main>
 		<aside>
 			<ul class="filter-container">
-				<li>
-					<button>Category</button>
-					<img src="./images/icons/plus.svg" alt="Plus icon">
+				<li class="dropdown">
+					<button>
+						Category
+						<img src="./images/icons/add_pink.svg" alt="Add icon">
+					</button>
+					
 				</li>
-				<li>
+				<li class="category-items">
 					<label for="revolver">
 						<input type="checkbox" name="category" id="revolver">
 						Revolver
@@ -70,11 +73,13 @@
 					</label>
 				</li>
 
-				<li>
-					<button>Caliber</button>
-					<img src="./images/icons/minus.svg" alt="Minus icon">
+				<li class="dropdown">
+					<button>
+						Caliber
+						<img src="./images/icons/add_pink.svg" alt="Add icon">
+					</button>
 				</li>
-				<li>
+				<li class="caliber-items">
 					<label for="revolver-caliber">
 						<input type="checkbox" name="category" id="revolver-caliber">
 						.38 Special
@@ -103,8 +108,8 @@
 			</ul>
 		</aside>
 		
-		<section class="products-container">
-			<ul>
+		<section>
+			<ul class="products-container">
 				<li>
 					<a href="#">
 						<img class="product-img" src="https://www.silencershop.com/media/catalog/product/cache/6d6745aab1281926e9fd163d9d2d1716/m/k/mkiv_target_threaded-blk.jpg" alt="Product image">
