@@ -173,7 +173,7 @@ aside {
 	display: flex;
 	flex-direction: column;
 	gap: 0.4rem;
-	/* display: none; */
+	display: none;
 }
 
 .category-items label,
@@ -186,9 +186,11 @@ aside {
 	cursor: pointer;
 	padding: 8px;
 	color: #323232;
+	border-radius: 5px;
 }
 
-.category-items label:hover {
+.category-items label:hover,
+.caliber-items label:hover {
 	background-color: #fafafa;
 }
 

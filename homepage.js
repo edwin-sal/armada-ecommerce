@@ -48,3 +48,22 @@ productContainer.querySelectorAll('li').forEach(product => {
 		quickAddButton.style.display = 'none';
 	});
 });
+
+/* Add event listener for the sidebar dropdown buttons */
+document.querySelectorAll('.dropdown-button').forEach(button => {
+	button.addEventListener('click', function() {
+		const currentMode = this.getAttribute('data-current-mode');
+		const type = this.getAttribute('data-type');
+		const addSrc = this.getAttribute('data-add-src');
+		const removeSrc = this.getAttribute('data-remove-src');
+		const buttonIcon = this.querySelector('img');
+
+		// Display/Hide either category/caliber list depending on the current status of the button 
+		document.querySelector(`.${type}-items`).style.display = `${currentMode === 'hide' ? 'block' : 'none'}`;
+		this.setAttribute('data-current-mode', `${currentMode === 'hide' ? 'show' : 'hide'}`);
+
+		// Replace the dropdown button as well. Plus to show and minus to hide
+		buttonIcon.src = `./images/icons/${currentMode === 'hide' ? removeSrc : addSrc}`
+
+	});
+});
