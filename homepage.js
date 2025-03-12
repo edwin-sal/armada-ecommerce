@@ -3,6 +3,7 @@ import products from './products.js'
 
 let selectedCategory = 'all';
 let selectedPriceOrder = 'random-price';
+let searchKeyword = '';
 
 function renderProductsContainer() {
 	const productContainer = document.querySelector('.products-container');
@@ -13,6 +14,7 @@ function renderProductsContainer() {
 		filteredProducts = filteredProducts.filter(product => (product.category === selectedCategory));
 	}
 
+	// Sort products by price
 	if(selectedPriceOrder !== 'random-price') {
 		if(selectedPriceOrder === 'low-to-high') {
 			filteredProducts.sort((a, b) => a.price - b.price);
@@ -20,6 +22,15 @@ function renderProductsContainer() {
 			filteredProducts.sort((a, b) => b.price - a.price);
 		}
 	}
+
+	// Filter products by keyword
+	if(searchKeyword !== '') {
+		filteredProducts = filteredProducts.filter(product => product.name.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase()));
+	} else {
+		filteredProducts = [...filteredProducts];
+	}
+
+	console.error(filteredProducts);
 
 	// Render the products
 	let productElements = '';
@@ -70,6 +81,8 @@ function renderProductsContainer() {
 
 	console.log(selectedCategory);
 	console.log(selectedPriceOrder);
+	console.log(searchKeyword);
+	console.log(filteredProducts)
 };
 
 /* Show/Hide dropdown containers by pressing the dropdown button */
@@ -112,6 +125,13 @@ document.querySelector('.price-items').querySelectorAll('label input').forEach(i
 		selectedPriceOrder = priceOrder;
 		renderProductsContainer();
 	});
-})
+});
+
+/* Sort the products based on keyword searches */
+document.getElementById('search-input').addEventListener('input', function(event) {
+	searchKeyword = event.target.value;
+
+	renderProductsContainer();
+});
 
 renderProductsContainer(products);
