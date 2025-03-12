@@ -5,6 +5,14 @@ let selectedCategory = 'all';
 let selectedPriceOrder = 'random-price';
 let searchKeyword = '';
 
+/* 
+	This should be useful if the user used search bar outside the homepage.
+	The user will be redirected back to the homepage including the search keyword as params.
+*/
+const params = new URLSearchParams(window.location.search);
+const paramsValue = params.get('search');
+if(paramsValue) searchKeyword = paramsValue; // If there was a search params, then assign it to the searchKeyword.
+
 function renderProductsContainer() {
 	const productContainer = document.querySelector('.products-container');
 	let filteredProducts = [...products];
@@ -30,7 +38,7 @@ function renderProductsContainer() {
 		filteredProducts = [...filteredProducts];
 	}
 
-	console.error(filteredProducts);
+	// console.error(filteredProducts);
 
 	// Render the products
 	let productElements = '';
@@ -92,7 +100,7 @@ function renderProductsContainer() {
 	console.log(selectedCategory);
 	console.log(selectedPriceOrder);
 	console.log(searchKeyword);
-	console.log(filteredProducts)
+	// console.log(filteredProducts)
 };
 
 /* Show/Hide dropdown containers by pressing the dropdown button */

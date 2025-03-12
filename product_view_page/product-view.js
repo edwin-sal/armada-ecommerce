@@ -1,6 +1,10 @@
 import products from '../products.js'
 import getStars from '../get-stars.js';
 
+let searchKeyword = '';
+
+/* Disable default form behavior */
+
 /* Get the product from products array */
 const params = new URLSearchParams(window.location.search);
 const productId = Number(params.get('id')); // Need to convert to number since product.id is also a number
@@ -107,4 +111,22 @@ document.querySelectorAll('.quantity-control').forEach(button => {
 
 		productQuantityInput.value = currentQuantity;
 	});
+});
+
+/* Add event listener to the search input */
+document.getElementById('search-input').addEventListener('input', function(event) {
+	searchKeyword = event.target.value;
+	console.log(searchKeyword);
+});
+
+/* 
+	Add search functionality within product view. 
+	Redirects back to home page.
+*/
+document.getElementById('search-form').addEventListener('submit', function(event) {
+	event.preventDefault(); // Disable default behavior
+	if(!searchKeyword) return;
+
+	const homePageUrl = `../../index.html?search=${searchKeyword}`;
+	window.location.href = homePageUrl;
 });
