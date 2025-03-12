@@ -162,4 +162,20 @@ document.getElementById('search-form').addEventListener('submit', function(event
 	renderProductsContainer();
 });
 
+/* Show/hide sidebar by pressing the sidebar button */
+const sidebar = document.getElementById('sidebar');
+document.getElementById('sidebar-button').addEventListener('click', function() {
+	sidebar.classList.toggle('hide'); // Hides/show the sidebar 
+});
+
+window.addEventListener('resize', function() {
+	if(window.innerWidth === 628) { // Show sidebar when 628px is reached
+		sidebar.classList.remove('hide');
+	} else if(this.window.innerWidth < 628) { // Hide sidebar when screensize is < 628
+		sidebar.classList.add('hide');
+	}
+});
+
+
+
 renderProductsContainer();

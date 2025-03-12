@@ -304,6 +304,10 @@ aside {
 	display: none;
 }
 
+.hide {
+	display: none;
+}
+
 /* For the header */
 @media screen and (max-width: 760px) {
 	aside {
@@ -327,10 +331,6 @@ aside {
 
 	.search-bar {
 		margin: 0;
-	}
-
-	aside {
-		display: none;
 	}
 }
 
@@ -370,5 +370,11 @@ aside {
 		height: 2rem;
 		line-height: 2rem;
 		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 418px) {
+	.products-container {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	}
 }
