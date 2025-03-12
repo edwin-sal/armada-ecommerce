@@ -449,3 +449,17 @@ h1 {
 		width: 100%;
 	}
 }
+
+@media screen and (max-width: 380px) {
+	.quantity-container button {
+		font-size: 1.2rem;
+		height: 2rem;
+		width: 2rem;
+	}
+
+	.quantity-container input,
+	.add-to-cart {
+		font-size: 0.8rem;
+		height: 2rem;
+	}
+}
