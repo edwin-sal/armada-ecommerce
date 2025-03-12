@@ -1,3 +1,4 @@
+import getStars from './get-stars.js';
 import products from './products.js'
 
 let selectedCategory = 'all';
@@ -23,6 +24,10 @@ function renderProductsContainer() {
 	// Render the products
 	let productElements = '';
 	filteredProducts.forEach(product => {
+
+		// Get the star elements of the product
+		const starElements = getStars('./images/icons/', product.ratings);
+
 		productElements += `
 			<li>
 				<a href="./product_view_page/product.html?id=${product.id}" class="product">
@@ -35,11 +40,7 @@ function renderProductsContainer() {
 
 						<div class="price-rating-container">
 							<div class="stars-container">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
+								${starElements}
 							</div>
 
 							<span class="sold">${product.sold} sold</span>
