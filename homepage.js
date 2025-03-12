@@ -25,7 +25,7 @@ function renderProductsContainer() {
 	filteredProducts.forEach(product => {
 		productElements += `
 			<li>
-				<a href="#" class="product">
+				<a href="./product_view_page/product.html?id=${product.id}" class="product">
 					<img class="product-img" src="${product.imageURL}" alt="Product image">
 
 					<div class="product-info">
