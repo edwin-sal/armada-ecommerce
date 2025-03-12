@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Product</title>
 	<link rel="stylesheet" href="./product.css">
+	<link rel="stylesheet" href="../header.css">
 </head>
 <body>
 	<header>
@@ -25,9 +26,17 @@
 				<span>0</span>
 			</a>
 
-			<button class="profile-container">
-				<span class="profile-rounded">ES</span>
-			</button>
+			<div class="profile-container">
+				<button class="profile-rounded" id="profile-name">ES</button>
+
+				<button class="logout hide" id="logout">
+					Logout
+					<img src="../../images/icons/logout.svg" alt="Logout icon">
+				</button>
+			</div>
+
+			<button class="login">Login</button>
+			<button class="signup">Signup</button>
 		</div>
 	</header>
 
@@ -122,5 +131,6 @@
 
 	<script type="module" src="../products.js"></script>
 	<script type="module" src="./product-view.js"></script>
+	<script src="../header.js"></script>
 </body>
 </html>

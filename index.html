@@ -5,10 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bang & Bang</title>
 	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet" href="./header.css">
 </head>
 <body>
 	<header>
 		<div class="header-content">
+			<button class="sidebar-button" id="sidebar-button">
+				<img src="./images/icons/menu.svg" alt="Hamburger menu">
+			</button>
+
 			<a href="./index.html">
 				<img class="header-logo" src="./images/logos/logo_transparent.png" alt="Bang & bang logo">
 			</a>
@@ -25,14 +30,22 @@
 				<span>0</span>
 			</a>
 
-			<button class="profile-container">
-				<span class="profile-rounded">ES</span>
-			</button>
+			<div class="profile-container">
+				<button class="profile-rounded" id="profile-name">ES</button>
+
+				<button class="logout hide" id="logout">
+					Logout
+					<img src="./images/icons/logout.svg" alt="Logout icon">
+				</button>
+			</div>
+			
+			<button class="login">Login</button>
+			<button class="signup">Signup</button>
 		</div>
 	</header>
 
 	<main>
-		<aside>
+		<aside id="sidebar" data-state="show">
 			<ul class="filter-container">
 				<li class="dropdown">
 					<button class="dropdown-button" data-current-mode="show" data-type="category" data-add-src="add_pink.svg" data-remove-src="remove_pink.svg">
@@ -160,5 +173,6 @@
 
 	<script type="module" src="./products.js"></script>
 	<script type="module" src="./homepage.js"></script>
+	<script src="./header.js"></script>
 </body>
 </html>

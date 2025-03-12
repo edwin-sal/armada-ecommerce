@@ -162,4 +162,25 @@ document.getElementById('search-form').addEventListener('submit', function(event
 	renderProductsContainer();
 });
 
+/* Show/hide sidebar by pressing the sidebar button */
+document.getElementById('sidebar-button').addEventListener('click', function() {
+	const sidebar = document.getElementById('sidebar');
+	const state = sidebar.getAttribute('data-state');
+	// sidebar.classList.toggle('hide'); // Hides/show the sidebar 
+
+	sidebar.style.display = state === 'show' ? 'none' : 'block';
+	sidebar.setAttribute('data-state', `${state === 'show' ? 'hide' : 'show'}`);
+
+	window.addEventListener('resize', function() {
+		const screenWidth = window.innerWidth;
+		if(screenWidth >= 628) {
+			sidebar.style.display = 'block';
+			sidebar.setAttribute('data-state', 'show');
+		}
+	});
+});
+
+
+
+
 renderProductsContainer();
