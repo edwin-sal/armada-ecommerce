@@ -45,7 +45,7 @@ const productViewContainer = `
 				${starElements}
 			</div>
 
-			<span>8 sold</span>
+			<span>${productData.sold} sold</span>
 		</div>
 
 		<span class="price">₱${productData.price.toLocaleString()}</span>
