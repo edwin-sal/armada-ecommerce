@@ -163,18 +163,23 @@ document.getElementById('search-form').addEventListener('submit', function(event
 });
 
 /* Show/hide sidebar by pressing the sidebar button */
-const sidebar = document.getElementById('sidebar');
 document.getElementById('sidebar-button').addEventListener('click', function() {
-	sidebar.classList.toggle('hide'); // Hides/show the sidebar 
+	const sidebar = document.getElementById('sidebar');
+	const state = sidebar.getAttribute('data-state');
+	// sidebar.classList.toggle('hide'); // Hides/show the sidebar 
+
+	sidebar.style.display = state === 'show' ? 'none' : 'block';
+	sidebar.setAttribute('data-state', `${state === 'show' ? 'hide' : 'show'}`);
+
+	window.addEventListener('resize', function() {
+		const screenWidth = window.innerWidth;
+		if(screenWidth >= 628) {
+			sidebar.style.display = 'block';
+			sidebar.setAttribute('data-state', 'show');
+		}
+	});
 });
 
-window.addEventListener('resize', function() {
-	if(window.innerWidth === 628) { // Show sidebar when 628px is reached
-		sidebar.classList.remove('hide');
-	} else if(this.window.innerWidth < 628) { // Hide sidebar when screensize is < 628
-		sidebar.classList.add('hide');
-	}
-});
 
 
 
