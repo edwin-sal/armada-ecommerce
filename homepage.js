@@ -1,7 +1,9 @@
+import getStars from './get-stars.js';
 import products from './products.js'
 
 let selectedCategory = 'all';
 let selectedPriceOrder = 'random-price';
+let searchKeyword = '';
 
 function renderProductsContainer() {
 	const productContainer = document.querySelector('.products-container');
@@ -12,6 +14,7 @@ function renderProductsContainer() {
 		filteredProducts = filteredProducts.filter(product => (product.category === selectedCategory));
 	}
 
+	// Sort products by price
 	if(selectedPriceOrder !== 'random-price') {
 		if(selectedPriceOrder === 'low-to-high') {
 			filteredProducts.sort((a, b) => a.price - b.price);
@@ -20,9 +23,22 @@ function renderProductsContainer() {
 		}
 	}
 
+	// Filter products by keyword
+	if(searchKeyword !== '') {
+		filteredProducts = filteredProducts.filter(product => product.name.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase()));
+	} else {
+		filteredProducts = [...filteredProducts];
+	}
+
+	console.error(filteredProducts);
+
 	// Render the products
 	let productElements = '';
 	filteredProducts.forEach(product => {
+
+		// Get the star elements of the product
+		const starElements = getStars('./images/icons/', product.ratings);
+
 		productElements += `
 			<li>
 				<a href="./product_view_page/product.html?id=${product.id}" class="product">
@@ -35,11 +51,7 @@ function renderProductsContainer() {
 
 						<div class="price-rating-container">
 							<div class="stars-container">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
-								<img src="./images/icons/star-solid.svg" alt="Star icon">
+								${starElements}
 							</div>
 
 							<span class="sold">${product.sold} sold</span>
@@ -52,6 +64,16 @@ function renderProductsContainer() {
 	});
 
 	productContainer.innerHTML = productElements;
+
+	/* 
+		Apply few-item styling to the products container when there is only 1-3 product(s) rendered .
+		This prevents the item from occupying the entire container's width due to the default grid template used.
+	*/
+	if(filteredProducts.length >= 1 && filteredProducts.length <= 3) {
+		productContainer.classList.add('few-item');
+	} else {
+		productContainer.classList.remove('few-item');
+	}
 
 
 	/* Display the add to cart button for each product */
@@ -69,6 +91,8 @@ function renderProductsContainer() {
 
 	console.log(selectedCategory);
 	console.log(selectedPriceOrder);
+	console.log(searchKeyword);
+	console.log(filteredProducts)
 };
 
 /* Show/Hide dropdown containers by pressing the dropdown button */
@@ -111,6 +135,13 @@ document.querySelector('.price-items').querySelectorAll('label input').forEach(i
 		selectedPriceOrder = priceOrder;
 		renderProductsContainer();
 	});
-})
+});
+
+/* Sort the products based on keyword searches */
+document.getElementById('search-input').addEventListener('input', function(event) {
+	searchKeyword = event.target.value;
+
+	renderProductsContainer();
+});
 
 renderProductsContainer(products);
