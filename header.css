@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+header {
+	background-color: white;
+	border-bottom: 1px solid lightgray;
+	position: sticky;
+	top: 0;
+	z-index: 15;
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+	padding: 1.5rem 10px;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.header-logo {
+	max-width: 150px;
+}
+
+.search-bar {
+	flex-grow: 1;
+	display: flex;
+	height: 3rem;
+	margin: 0 4rem;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.search-bar input {
+	width: 100%;
+	font-family: inherit;
+	font-size: 1rem;
+	background-color: #eff0f5;
+	border: none;
+	outline: none;
+	color: #2b1b19;
+	padding: 1rem;
+}
+
+.search-bar button {
+	border: none;
+	background-color: #2b1b19;
+	cursor: pointer;
+	padding: 1rem;
+}
+
+.search-bar button img {
+	width: 1rem;
+}
+
+.cart-link {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	position: relative;
+	margin-right: 1rem;
+}
+
+.cart-link img {
+	width: 2.5rem;
+}
+
+.cart-link span {
+	background-color: #ff9e95;
+	color: white;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	font-size: 0.875rem;
+}
+
+.profile-container {
+	display: flex;
+	position: relative;
+}
+
+.profile-name {
+	font-size: 1rem;
+}
+
+.profile-rounded {
+	font-family: inherit;
+	font-weight: 500;
+	font-size: 1.3rem;
+	color: #2b1b19;
+	cursor: pointer;
+	border: none;
+	background-color: rgba(43, 27, 25, 0.7);
+	width: 3rem;
+    height: 3rem; 
+	line-height: 3rem;
+	text-align: center;
+	display: inline-block;
+	
+	border-radius: 50%;
+	/* display: none; */
+}
+
+.logout {
+	color: #2b1b19;
+	font-weight: 500;
+	font-family: inherit;
+	font-size: 1rem;
+	background-color: white;
+	border: 1px solid lightgray;
+	height: 3rem;
+	padding: 0 1rem;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	position: absolute;
+	bottom: -3.5rem;
+	right: 0;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.login,
+.signup {
+	font-family: inherit;
+	height: 3rem;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+	font-weight: 500;
+	width: 5rem;
+	font-size: 0.875rem;
+	display: none;
+}
+
+.signup {
+	background-color: #2b1b19;
+	color: white;
+}
+
+.login {
+	background-color: #dfdddd;
+	border: 2px solid #2b1b19;
+	margin-right: 5px;
+}
+
+@media screen and (max-width: 627px) {
+	.sidebar-button img {
+		width: 2rem;
+		height: auto;
+	}
+
+	.search-bar {
+		margin: 0 5px;
+	}
+
+	.signup {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header-logo {
+		width: 100px;
+	}
+
+	.search-bar {
+		margin: 0 5px;
+		height: 2.5rem;
+	}
+
+	.search-bar input {
+		font-size: 0.875rem;
+		padding: 0.5rem;
+	}
+
+	.cart-link {
+		margin-right: 10px;
+	}
+
+	.search-bar button {
+		padding: 0.8rem;
+	}
+
+	.cart-link img {
+		width: 1.8rem;
+	}
+
+	.cart-link span {
+		width: 20px;
+		height: 20px;
+		top: -5px;
+		right: -5px;
+	}
+
+	.profile-rounded {
+		width: 2rem;
+		height: 2rem;
+		line-height: 2rem;
+		font-size: 1rem;
+	}
+
+	.login {
+		height: 2.5rem;
+	}
+
+	.logout {
+		font-size: 0.875rem;
+		height: 2.5rem;
+	}
+
+	.logout img {
+		width: 1.2rem;
+	}
+}
