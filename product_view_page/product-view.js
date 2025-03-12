@@ -24,23 +24,16 @@ console.log(starElements);
 
 /* Render product view container */
 const mainElement = document.querySelector('main');
+const productViewSection = document.getElementById('product-view-section');
 const productViewContainer = `
 	<div class="product-img-container">
 		<img id="main-img" class="main-img" src="${productData.imageURL}" alt="Product thumbnail">
 
 		<div class="other-images-container">
-			<button>
-				<img src="${productData.imageURL}" alt="Product image">
-			</button>	
-			<button>
-				<img src="${productData.otherImages[0]}" alt="Product image">
-			</button>
-			<button>
-				<img src="${productData.otherImages[1]}" alt="Product image">
-			</button>
-			<button>
-				<img src="${productData.otherImages[2]}" alt="Product image">
-			</button>
+			<img src="${productData.imageURL}" alt="Product image">
+			<img src="${productData.otherImages[0]}" alt="Product image">
+			<img src="${productData.otherImages[1]}" alt="Product image">
+			<img src="${productData.otherImages[2]}" alt="Product image">
 		</div>
 	</div>
 
@@ -73,7 +66,7 @@ const productViewContainer = `
 		</form>
 	</div>
 `;
-mainElement.innerHTML = productViewContainer;
+productViewSection.innerHTML = productViewContainer;
 
 /* Define global variables */
 const maingImg = document.getElementById('main-img');
