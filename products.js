@@ -554,6 +554,7 @@ let products = [
 			'https://www.offgridweb.com/wp-content/uploads/2024/04/century-arms-ap5p-mp5k-clone-sbr-01.jpg',
 			'https://topwar.ru/uploads/posts/2019-04/1556523104_1_-koreja.jpg'
 		],
+		description: `The HK MP5K PDW is a compact powerhouse, designed for maximum versatility in tactical scenarios. Featuring a robust polymer frame and ergonomic design, this firearm is optimized for quick handling and maneuverability. Its 9mm caliber delivers impressive accuracy and stopping power, making it ideal for close-quarters engagements. Equipped with an adjustable sight and Picatinny rail, the MP5K PDW allows for customization with various accessories. Whether for law enforcement or personal defense, this firearm combines reliability and performance in a sleek package.`
 	},
 ];
 

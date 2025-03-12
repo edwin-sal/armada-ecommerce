@@ -5,6 +5,14 @@ let selectedCategory = 'all';
 let selectedPriceOrder = 'random-price';
 let searchKeyword = '';
 
+/* 
+	This should be useful if the user used search bar outside the homepage.
+	The user will be redirected back to the homepage including the search keyword as params.
+*/
+const params = new URLSearchParams(window.location.search);
+const paramsValue = params.get('search');
+if(paramsValue) searchKeyword = paramsValue; // If there was a search params, then assign it to the searchKeyword.
+
 function renderProductsContainer() {
 	const productContainer = document.querySelector('.products-container');
 	let filteredProducts = [...products];
@@ -30,7 +38,7 @@ function renderProductsContainer() {
 		filteredProducts = [...filteredProducts];
 	}
 
-	console.error(filteredProducts);
+	// console.error(filteredProducts);
 
 	// Render the products
 	let productElements = '';
@@ -92,7 +100,7 @@ function renderProductsContainer() {
 	console.log(selectedCategory);
 	console.log(selectedPriceOrder);
 	console.log(searchKeyword);
-	console.log(filteredProducts)
+	// console.log(filteredProducts)
 };
 
 /* Show/Hide dropdown containers by pressing the dropdown button */
@@ -137,11 +145,21 @@ document.querySelector('.price-items').querySelectorAll('label input').forEach(i
 	});
 });
 
-/* Sort the products based on keyword searches */
+/* Filter the products based on keyword searches */
 document.getElementById('search-input').addEventListener('input', function(event) {
 	searchKeyword = event.target.value;
 
 	renderProductsContainer();
 });
 
-renderProductsContainer(products);
+/* Enable search functionality through the form submission */
+document.getElementById('search-form').addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	const searchInput = document.getElementById('search-input');
+	searchKeyword = searchInput.value;
+
+	renderProductsContainer();
+});
+
+renderProductsContainer();

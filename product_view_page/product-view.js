@@ -1,6 +1,10 @@
 import products from '../products.js'
 import getStars from '../get-stars.js';
 
+let searchKeyword = '';
+
+/* Disable default form behavior */
+
 /* Get the product from products array */
 const params = new URLSearchParams(window.location.search);
 const productId = Number(params.get('id')); // Need to convert to number since product.id is also a number
@@ -20,23 +24,16 @@ console.log(starElements);
 
 /* Render product view container */
 const mainElement = document.querySelector('main');
+const productViewSection = document.getElementById('product-view-section');
 const productViewContainer = `
 	<div class="product-img-container">
 		<img id="main-img" class="main-img" src="${productData.imageURL}" alt="Product thumbnail">
 
 		<div class="other-images-container">
-			<button>
-				<img src="${productData.imageURL}" alt="Product image">
-			</button>	
-			<button>
-				<img src="${productData.otherImages[0]}" alt="Product image">
-			</button>
-			<button>
-				<img src="${productData.otherImages[1]}" alt="Product image">
-			</button>
-			<button>
-				<img src="${productData.otherImages[2]}" alt="Product image">
-			</button>
+			<img src="${productData.imageURL}" alt="Product image">
+			<img src="${productData.otherImages[0]}" alt="Product image">
+			<img src="${productData.otherImages[1]}" alt="Product image">
+			<img src="${productData.otherImages[2]}" alt="Product image">
 		</div>
 	</div>
 
@@ -69,7 +66,52 @@ const productViewContainer = `
 		</form>
 	</div>
 `;
-mainElement.innerHTML = productViewContainer;
+productViewSection.innerHTML = productViewContainer;
+
+/* 
+Render Similar items  
+Store the 4 random objects in arrays then render them as HTML
+*/
+let itemContainer = [];
+while(itemContainer.length !== 4) {
+	const randomIndex = Math.floor(Math.random() * products.length);
+	const randomItem = products[randomIndex];
+
+	if(randomItem.id !== productData.id) {
+		itemContainer.push(randomItem);
+	}
+}
+
+let itemElements = '';
+itemContainer.forEach(item => {
+	const miniStarElements = getStars('../images/icons/', item.ratings);
+
+	itemElements += `
+		<li>
+			<a href=".././product_view_page/product.html?id=${item.id}" class="product">
+				<img class="product-img" src="${item.imageURL}" alt="Product image">
+
+				<div class="product-info">
+					<h4>${item.name}</h4>
+
+					<span class="small-price">₱${item.price.toLocaleString()}</span>
+
+					<div class="price-rating-container">
+						<div class="stars-container">
+							${miniStarElements}
+						</div>
+
+						<span class="sold">${item.sold} sold</span>
+					</div>
+				</div>
+			</a>
+		</li>
+	`;
+});
+
+document.querySelector('.similar-items-container').innerHTML = itemElements;
+
+console.log(itemElements);
 
 /* Define global variables */
 const maingImg = document.getElementById('main-img');
@@ -107,4 +149,22 @@ document.querySelectorAll('.quantity-control').forEach(button => {
 
 		productQuantityInput.value = currentQuantity;
 	});
+});
+
+/* Add event listener to the search input */
+document.getElementById('search-input').addEventListener('input', function(event) {
+	searchKeyword = event.target.value;
+	console.log(searchKeyword);
+});
+
+/* 
+	Add search functionality within product view. 
+	Redirects back to home page.
+*/
+document.getElementById('search-form').addEventListener('submit', function(event) {
+	event.preventDefault(); // Disable default behavior
+	if(!searchKeyword) return;
+
+	const homePageUrl = `../../index.html?search=${searchKeyword}`;
+	window.location.href = homePageUrl;
 });

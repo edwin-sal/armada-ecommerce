@@ -293,3 +293,42 @@ aside {
 	z-index: 10;
 	display: none;
 }
+
+/* For the header */
+@media screen and (max-width: 525px) {
+	.header-logo {
+		width: 100px;
+	}
+
+	.search-bar {
+		margin: 0;
+		height: 2.5rem;
+	}
+
+	.search-bar input {
+		font-size: 0.875rem;
+		padding: 0.5rem;
+	}
+
+	.search-bar button {
+		padding: 0.8rem;
+	}
+
+	.cart-link img {
+		width: 1.8rem;
+	}
+
+	.cart-link span {
+		width: 20px;
+		height: 20px;
+		top: -5px;
+		right: -5px;
+	}
+
+	.profile-rounded {
+		width: 2rem;
+		height: 2rem;
+		line-height: 2rem;
+		font-size: 1rem;
+	}
+}
