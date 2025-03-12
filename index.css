@@ -33,6 +33,16 @@ header {
 	gap: 1rem;
 }
 
+.sidebar-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	display: none;
+}
+
 .header-logo {
 	max-width: 150px;
 }
@@ -295,7 +305,37 @@ aside {
 }
 
 /* For the header */
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 760px) {
+	aside {
+		width: fit-content;
+	}
+}
+
+@media screen and (max-width: 627px) {
+	.header-logo {
+		display: none;
+	}
+
+	.sidebar-button {
+		display: block;
+	}
+
+	.sidebar-button img {
+		width: 2rem;
+		height: auto;
+	}
+
+	.search-bar {
+		margin: 0;
+	}
+
+	aside {
+		display: none;
+	}
+}
+
+/* For the header */
+@media screen and (max-width: 600px) {
 	.header-logo {
 		width: 100px;
 	}

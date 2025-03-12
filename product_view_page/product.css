@@ -391,7 +391,7 @@ h1 {
 }
 
 /* For the header */
-@media screen and (max-width: 525px) {
+@media screen and (max-width: 600px) {
 	.header-logo {
 		width: 100px;
 	}
