@@ -3,7 +3,7 @@ let products = [
 		id: 0,
 		imageURL: 'https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg',
 		name: 'NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER',
-		ratings: 2.5,
+		ratings: 1.5,
 		sold: 8,
 		price: 8999,
 		category: 'revolver',
@@ -482,7 +482,7 @@ let products = [
 			'https://preview.redd.it/resell-value-v0-4y8xajp26o8c1.jpeg?auto=webp&s=f96f845d66054ed435ad132aa9d940ee29134808',
 			'https://www.swatmag.com/app/uploads/swat/2019/01/FN-6.jpg'
 		],
-		description: `The FN 509 Tactical is a striker-fired semi-automatic pistol chambered in 9mm, designed for performance and versatility. It features a threaded barrel for attaching suppressors and an optics-ready slide for mounting red dot sights. With a 17-round magazine capacity, it balances firepower and size effectively. The ergonomic design includes adjustable backstraps for a customized fit and suppressor-height sights for easy alignment. Built for reliability, the FN 509 Tactical is ideal for tactical use and personal defense.`
+		description: `The FN 509 Tactical is a striker-fired semi-automatic pistol chambered in 9mm, designed for performance and versatility. It features a threaded barrel forstar-solid.svg for tactical use and personal defense.`
 	},
 
 	{

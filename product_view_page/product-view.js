@@ -1,4 +1,5 @@
 import products from '../products.js'
+import getStars from '../get-stars.js';
 
 /* Get the product from products array */
 const params = new URLSearchParams(window.location.search);
@@ -12,6 +13,10 @@ for(let i = 0; i < products.length; i++) {
 	}
 }
 console.log(productData)
+
+/* Get the number of star rating the product has */
+const starElements = getStars('../images/icons/', productData.ratings);
+console.log(starElements);
 
 /* Render product view container */
 const mainElement = document.querySelector('main');
@@ -40,11 +45,7 @@ const productViewContainer = `
 
 		<div class="stars-sold-container">
 			<div class="stars-container">
-				<img src="../images/icons/star-solid.svg" alt="Star icon">
-				<img src="../images/icons/star-solid.svg" alt="Star icon">
-				<img src="../images/icons/star-solid.svg" alt="Star icon">
-				<img src="../images/icons/star-solid.svg" alt="Star icon">
-				<img src="../images/icons/star-solid.svg" alt="Star icon">
+				${starElements}
 			</div>
 
 			<span>8 sold</span>
