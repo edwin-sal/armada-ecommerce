@@ -147,6 +147,10 @@ header {
 	margin-right: 5px;
 }
 
+.hide {
+	display: none;
+}
+
 @media screen and (max-width: 627px) {
 	.sidebar-button img {
 		width: 2rem;

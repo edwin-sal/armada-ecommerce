@@ -330,6 +330,10 @@ h1 {
 		display: flex;
 		justify-content: center;
 	}
+
+	.similar-items-container {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
 }
 
 @media screen and (max-width: 380px) {
