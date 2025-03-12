@@ -32,15 +32,14 @@
 
 			<div class="profile-container">
 				<button class="profile-rounded" id="profile-name">ES</button>
-
-				<button class="logout hide" id="logout">
+				<button id="logout">
 					Logout
 					<img src="./images/icons/logout.svg" alt="Logout icon">
 				</button>
 			</div>
 			
-			<button class="login">Login</button>
-			<button class="signup">Signup</button>
+			<button id="login">Login</button>
+			<button id="signup">Signup</button>
 		</div>
 	</header>
 
@@ -169,6 +168,76 @@
 				</li> -->
 			</ul>
 		</section>
+		<div class="modal-backdrop" id="auth-modal">
+			<div class="modal">
+				<div class="modal-header">
+					<h2 class="modal-title">Welcome to Beng & Beng</h2>
+					<button class="close-button" id="close-modal">&times;</button>
+				</div>
+				
+				<div class="modal-tabs">
+					<div class="tab login-tab active" id="login-tab">Login</div>
+					<div class="tab signup-tab" id="signup-tab">Signup</div>
+				</div>
+				
+				<div class="modal-content">
+					<div id="login-content" class="tab-content active">
+						<form id="login-form">
+							<div class="form-group">
+								<label for="login-email">Email</label>
+								<input type="email" id="login-email" required>
+							</div>
+							
+							<div class="form-group">
+								<label for="login-password">Password</label>
+								<input type="password" id="login-password" required>
+							</div>
+							
+							<button type="submit" class="auth-button">Login</button>
+							
+							<div class="forgotten-password">
+								<a href="#">Forgot your password?</a>
+							</div>
+							
+							<div class="signup-note">
+								Don't have an account? <a href="#" id="switch-to-signup">Sign up</a>
+							</div>
+						</form>
+					</div>
+					
+					<div id="signup-content" class="tab-content">
+						<form id="signup-form">
+							<div class="form-group">
+								<label for="signup-name">Full Name</label>
+								<input type="text" id="signup-name" required>
+							</div>
+							
+							<div class="form-group">
+								<label for="signup-email">Email</label>
+								<input type="email" id="signup-email" required>
+							</div>
+							
+							<div class="form-group">
+								<label for="signup-password">Password</label>
+								<input type="password" id="signup-password" required minlength="8">
+							</div>
+							
+							<div class="form-group">
+								<label for="signup-confirm">Confirm Password</label>
+								<input type="password" id="signup-confirm" required minlength="8">
+							</div>
+							
+							<button type="submit" class="auth-button">Create Account</button>
+							
+							
+							<div class="signup-note">
+								Already have an account? <a href="#" id="switch-to-login">Log in</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<script type="module" src="./products.js"></script>
