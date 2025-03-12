@@ -72,11 +72,11 @@
 				
 			</p>
 
-			<form class="product-control-container">
+			<form id="add-to-cart-form" class="product-control-container">
 				<div class="quantity-container">
-					<button>-</button>
-					<input type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
-					<button>+</button>
+					<button class="quantity-control" data-mode="reduce">-</button>
+					<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
+					<button class="quantity-control" data-mode="add">+</button>
 				</div>
 
 				<button type="submit" class="add-to-cart">
