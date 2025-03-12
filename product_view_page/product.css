@@ -136,7 +136,7 @@ main {
 .product-view-section {
 	display: flex;
 	padding: 1rem;
-	height: 600px;
+	height: 620px;
 	gap: 1rem;
 }
 
@@ -179,7 +179,6 @@ main {
 	border: 1px solid lightgray;
 	padding: 2rem;
 	overflow: auto;
-	padding: 1rem;
 }
 
 h1 {
@@ -210,8 +209,9 @@ h1 {
 .description {
 	color: #686868;
 	font-weight: 400;
-	line-height: 1.8rem;
+	line-height: 1.5rem;
 	margin: 2rem 0 1rem 0;
+	font-size: 0.875rem;
 }
 
 .product-control-container {
@@ -220,7 +220,7 @@ h1 {
 	align-items: center;
 	gap: 1rem;
 	border-top: 1px solid lightgray;
-	padding-top: 2rem;
+	padding-top: 1rem;
 }
 
 .quantity-container {
@@ -273,6 +273,92 @@ h1 {
 
 .add-to-cart:hover {
 	background-color: rgba(43, 27, 25, 0.2);
+}
+
+.similar-section {
+	width: 100%;
+	/* background-color: red; */
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.similar-section h2 {
+	color: #2b1b19;
+	font-size: 1rem;
+	font-weight: 600;
+	margin-top: 2rem;
+	/* color: rgb(46, 46, 46); */
+}
+
+.similar-items-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+	list-style: none;
+	gap: 1rem;
+}
+
+.product {
+	height: 100%;
+	max-height: 420px;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+	color: #2b1b19;
+	border: 1px solid transparent;
+}
+
+.product:hover {
+	border: 1px solid #ff9e95;
+}
+
+.product-img {
+	width: 100%;
+	height: 70%;
+	object-fit: contain;
+	padding: 1rem;
+}
+
+.stars-container img {
+	width: 0.875rem;
+}
+
+.product-info {
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.product-info h4 {
+	display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	height: 3em; 
+    line-height: 1.5em; 
+	font-size: 0.8rem;
+
+}
+
+.price-rating-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.small-price {
+	color: #ff9e95;
+	font-weight: 600;
+	font-size: 0.875rem;
+	margin-bottom: 8px;
+}
+
+.sold {
+	font-size: 0.75rem;
 }
 
 @media screen and (max-width: 780px) {
