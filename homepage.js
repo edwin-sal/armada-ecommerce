@@ -145,11 +145,21 @@ document.querySelector('.price-items').querySelectorAll('label input').forEach(i
 	});
 });
 
-/* Sort the products based on keyword searches */
+/* Filter the products based on keyword searches */
 document.getElementById('search-input').addEventListener('input', function(event) {
 	searchKeyword = event.target.value;
 
 	renderProductsContainer();
 });
 
-renderProductsContainer(products);
+/* Enable search functionality through the form submission */
+document.getElementById('search-form').addEventListener('submit', function(event) {
+	event.preventDefault();
+
+	const searchInput = document.getElementById('search-input');
+	searchKeyword = searchInput.value;
+
+	renderProductsContainer();
+});
+
+renderProductsContainer();
