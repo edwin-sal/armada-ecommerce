@@ -30,7 +30,6 @@ header {
 	padding: 1.5rem 10px;
 	max-width: 1300px;
 	margin: 0 auto;
-	gap: 1rem;
 }
 
 .sidebar-button {
@@ -83,6 +82,7 @@ header {
 	align-items: center;
 	text-decoration: none;
 	position: relative;
+	margin-right: 1rem;
 }
 
 .cart-link img {
@@ -129,6 +129,30 @@ header {
 	display: inline-block;
 	background-color: rgba(43, 27, 25, 0.7);
 	border-radius: 50%;
+	display: none;
+}
+
+.login,
+.signup {
+	font-family: inherit;
+	height: 3rem;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+	font-weight: 500;
+	width: 5rem;
+	font-size: 0.875rem;
+}
+
+.signup {
+	background-color: #2b1b19;
+	color: white;
+}
+
+.login {
+	background-color: #dfdddd;
+	border: 2px solid #2b1b19;
+	margin-right: 5px;
 }
 
 main {
@@ -330,7 +354,11 @@ aside {
 	}
 
 	.search-bar {
-		margin: 0;
+		margin: 0 5px;
+	}
+
+	.signup {
+		display: none;
 	}
 }
 
@@ -341,13 +369,17 @@ aside {
 	}
 
 	.search-bar {
-		margin: 0;
+		margin: 0 5px;
 		height: 2.5rem;
 	}
 
 	.search-bar input {
 		font-size: 0.875rem;
 		padding: 0.5rem;
+	}
+
+	.cart-link {
+		margin-right: 10px;
 	}
 
 	.search-bar button {
@@ -370,6 +402,10 @@ aside {
 		height: 2rem;
 		line-height: 2rem;
 		font-size: 1rem;
+	}
+
+	.login {
+		height: 2.5rem;
 	}
 }
 

@@ -30,7 +30,6 @@ header {
 	padding: 1.5rem 10px;
 	max-width: 1300px;
 	margin: 0 auto;
-	gap: 1rem;
 }
 
 .header-logo {
@@ -73,6 +72,7 @@ header {
 	align-items: center;
 	text-decoration: none;
 	position: relative;
+	margin-right: 1rem;
 }
 
 .cart-link img {
@@ -119,6 +119,30 @@ header {
 	display: inline-block;
 	background-color: rgba(43, 27, 25, 0.7);
 	border-radius: 50%;
+	display: none;
+}
+
+.login,
+.signup {
+	font-family: inherit;
+	height: 3rem;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+	font-weight: 500;
+	width: 5rem;
+	font-size: 0.875rem;
+}
+
+.signup {
+	background-color: #2b1b19;
+	color: white;
+}
+
+.login {
+	background-color: #dfdddd;
+	border: 2px solid #2b1b19;
+	margin-right: 5px;
 }
 
 main {
@@ -390,6 +414,26 @@ h1 {
 	}
 }
 
+
+@media screen and (max-width: 627px) {
+	.sidebar-button {
+		display: block;
+	}
+
+	.sidebar-button img {
+		width: 2rem;
+		height: auto;
+	}
+
+	.search-bar {
+		margin: 0 5px;
+	}
+
+	.signup {
+		display: none;
+	}
+}
+
 /* For the header */
 @media screen and (max-width: 600px) {
 	.header-logo {
@@ -397,7 +441,7 @@ h1 {
 	}
 
 	.search-bar {
-		margin: 0;
+		margin: 0 5px;
 		height: 2.5rem;
 	}
 
@@ -408,6 +452,10 @@ h1 {
 
 	.search-bar button {
 		padding: 0.8rem;
+	}
+
+	.cart-link {
+		margin-right: 10px;
 	}
 
 	.cart-link img {
@@ -427,12 +475,24 @@ h1 {
 		line-height: 2rem;
 		font-size: 1rem;
 	}
+
+	.login {
+		height: 2.5rem;
+	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
 	.product-view-section {
+		display: flex;
 		flex-direction: column;
+		padding: 1rem;
+		gap: 1rem;
 		height: fit-content;
+	}
+
+	 .product-img-container {
+		width: 100%;
+		height: 500px;
 	}
 
 	.product-control-container {
@@ -443,10 +503,6 @@ h1 {
 		width: 100%;
 		display: flex;
 		justify-content: center;
-	}
-
-	.product-img-container {
-		width: 100%;
 	}
 }
 
