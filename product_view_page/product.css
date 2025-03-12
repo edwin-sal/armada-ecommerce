@@ -230,14 +230,14 @@ h1 {
 
 .quantity-container button,
 .quantity-container input {
-	padding: 1rem;
 	cursor: pointer;
 	background-color: transparent;
 	border: 1px solid lightgray;
+	height: 3rem;
+	width: 3rem;
 }
 
 .quantity-container button {
-	/* font-family: inherit; */
 	font-size: 1.5rem;
 	color: #2b1b19;
 }
@@ -258,7 +258,6 @@ h1 {
 .add-to-cart {
 	display: flex;
 	align-items: center;
-	padding: 1rem 3rem;
 	background-color: transparent;
 	border: 1px solid #2b1b19;
 	color: #2b1b19;
@@ -268,6 +267,8 @@ h1 {
 	font-size: 1rem;
 	font-weight: 500;
 	transition: background-color 0.3s ease;
+	height: 3rem;
+	padding: 0 1rem;
 	/* border-radius: 10px; */
 }
 
@@ -361,8 +362,90 @@ h1 {
 	font-size: 0.75rem;
 }
 
-@media screen and (max-width: 780px) {
-	/* main {
+@media screen and (max-width: 988px) {
+	.product-view-section {
+		height: 700px;
+	}
+}
+
+@media screen and (max-width: 876px) {
+	.product-img-container {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 794px) {
+	.product-img-container {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 696px) {
+	.product-img-container {
+		width: 250px;
+	}
+
+	.product-control-container {
 		flex-direction: column;
-	} */
+	}
+}
+
+/* For the header */
+@media screen and (max-width: 525px) {
+	.header-logo {
+		width: 100px;
+	}
+
+	.search-bar {
+		margin: 0;
+		height: 2.5rem;
+	}
+
+	.search-bar input {
+		font-size: 0.875rem;
+		padding: 0.5rem;
+	}
+
+	.search-bar button {
+		padding: 0.8rem;
+	}
+
+	.cart-link img {
+		width: 1.8rem;
+	}
+
+	.cart-link span {
+		width: 20px;
+		height: 20px;
+		top: -5px;
+		right: -5px;
+	}
+
+	.profile-rounded {
+		width: 2rem;
+		height: 2rem;
+		line-height: 2rem;
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.product-view-section {
+		flex-direction: column;
+		height: fit-content;
+	}
+
+	.product-control-container {
+		flex-direction: row;
+	}
+
+	.add-to-cart {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.product-img-container {
+		width: 100%;
+	}
 }
