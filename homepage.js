@@ -65,6 +65,16 @@ function renderProductsContainer() {
 
 	productContainer.innerHTML = productElements;
 
+	/* 
+		Apply few-item styling to the products container when there is only 1-3 product(s) rendered .
+		This prevents the item from occupying the entire container's width due to the default grid template used.
+	*/
+	if(filteredProducts.length >= 1 && filteredProducts.length <= 3) {
+		productContainer.classList.add('few-item');
+	} else {
+		productContainer.classList.remove('few-item');
+	}
+
 
 	/* Display the add to cart button for each product */
 	productContainer.querySelectorAll('li').forEach(product => {

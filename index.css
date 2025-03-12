@@ -217,6 +217,10 @@ aside {
 	align-items: stretch;
 }
 
+.few-item {
+	grid-template-columns: repeat(auto-fit, minmax(185px, 227.5px));
+}
+
 .products-container li {
 	position: relative;
 	border: 1px solid transparent;
@@ -239,6 +243,7 @@ aside {
 	width: 100%;
 	height: 70%;
 	object-fit: contain;
+	padding: 1rem;
 }
 
 .stars-container img {
