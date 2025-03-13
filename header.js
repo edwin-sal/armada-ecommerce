@@ -19,8 +19,12 @@ if(user) {
 	loginButton.style.display = 'none';
 	signupButton.style.display = 'none';
 
-	// Show cart count
-	// document.getElementById('cart-count').innerText = user.cart.length;
+	// Show cart count only on pages outside cart page
+	const currentPage = window.location.href;
+	if(!currentPage.includes('cart.html')) {	
+		document.getElementById('cart-count').innerText = user.cart.length;
+	}
+	
 } else {
 	profileName.style.display = 'none';
 }
@@ -40,6 +44,9 @@ logoutButton.addEventListener('click', function() {
 		window.location.href= './login_signup_page/login.html';
 	}
 	else if(currentLocation.includes('product.html')) {
+		window.location.href= '../../login_signup_page/login.html';
+	}
+	else if(currentLocation.includes('cart.html')) {
 		window.location.href= '../../login_signup_page/login.html';
 	}
 	

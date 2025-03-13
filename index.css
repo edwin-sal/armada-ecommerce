@@ -208,6 +208,26 @@ aside {
 	display: none;
 }
 
+.notification {
+	position: absolute;
+	background-color: red;
+	top: 100px;
+	right: 15px;
+	z-index: 100;
+	padding: 1rem;
+	background-color: white;
+	border: 1px solid lightgray;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	display: none;
+}
+
+.notification img {
+	width: 1.6rem;
+}
+
 @media screen and (max-width: 760px) {
 	aside {
 		width: fit-content;

@@ -20,6 +20,7 @@ body {
     align-items: center;
     padding: 20px;
     min-height: 100vh;
+    justify-content: center;
 }
 
 .logo-container {

@@ -6,10 +6,6 @@ export let accounts = [
 		email: 'admin123@gmail.com',
 		password: '123',
 		cart: [
-			{
-				productId: 0,
-				quantity: 11
-			}
 		],
 	}
 ];

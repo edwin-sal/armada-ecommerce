@@ -1,4 +1,8 @@
-
+// Prevents unsigned users form entering the cart page
+const user = JSON.parse(localStorage.getItem('user'));
+if(!user) {
+	window.location.href = '../index.html'
+}
 
 
 
