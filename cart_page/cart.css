@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Noto Sans", sans-serif;
+}
+
+img {
+	/* width: 50px; */
+}
+
+main {
+	margin: 0 auto;
+	max-width: 1300px;
+	display: flex;
+	gap: 1rem;
+}
+
+.cart-items-section {
+	width: 70%;
+	overflow: hidden;
+	padding: 1rem;
+}
+
+.cart-items-header {
+	display: flex;
+	color: #2b1b19;
+	justify-content: space-between;
+	border-bottom: 1px solid lightgray;
+	margin-bottom: 2.5rem;
+	padding-bottom: 1rem;
+}
+
+.image-container  {
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	gap: 1rem;
+}
+
+.image-container img {
+	max-width: 120px;
+	width: 100%;
+	height: auto;
+}
+
+.cart-item-name {
+	color: #2b1b19;
+	font-weight: 500;
+}
+
+.cart-labels span {
+	color: gray;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+}
+
+.cart-labels > :not(:first-child) {
+	justify-self: center;
+}
+
+.cart-item {
+	display: grid;
+	grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+	gap: 1rem;
+	align-items: center;
+	font-size: 0.875rem;
+}
+
+.quantity-container {
+	overflow: hidden;
+	display: flex;
+	justify-self: center;
+}
+
+.quantity-container input {
+	width: 2rem;
+	text-align: center;
+	height: 2rem;
+	border: none;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+
+.quantity-container button {
+	background-color: white;
+	border: 1px solid lightgray;
+	width: 2rem;
+	cursor: pointer;
+}
+
+.cart-item-price,
+.cart-item-final-price {
+	color: #ff9e95;
+	font-weight: 600;
+}
+
+.cart-item-price,
+.cart-item-final-price,
+.delete-cart-item {
+	justify-self: center;
+}
+
+.delete-cart-item {
+	display: flex;
+	justify-content: center;
+	background-color: transparent;
+	width: fit-content;
+	cursor: pointer;
+	border: none;
+}
+
+.delete-cart-item img {
+	width: 1.5rem;
+	height: auto;
+}
+
