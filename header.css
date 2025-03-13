@@ -20,6 +20,10 @@ header {
 	max-width: 150px;
 }
 
+#alt-logo {
+	display: none;
+}
+
 .search-bar {
 	flex-grow: 1;
 	display: flex;
@@ -228,5 +232,17 @@ header {
 
 	.logout img {
 		width: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#main-logo {
+		display: none;
+	}
+
+	#alt-logo {
+		display: block;
+		width: 3rem;
+		height: auto;
 	}
 }

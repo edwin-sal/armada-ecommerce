@@ -170,14 +170,20 @@ document.getElementById('sidebar-button').addEventListener('click', function() {
 
 	sidebar.style.display = state === 'show' ? 'none' : 'block';
 	sidebar.setAttribute('data-state', `${state === 'show' ? 'hide' : 'show'}`);
+});
 
-	window.addEventListener('resize', function() {
-		const screenWidth = window.innerWidth;
-		if(screenWidth >= 628) {
-			sidebar.style.display = 'block';
-			sidebar.setAttribute('data-state', 'show');
-		}
-	});
+/* Dybamically Show/hide sidebar screen size */
+window.addEventListener('resize', function() {
+	const sidebar = document.getElementById('sidebar');
+	const screenWidth = window.innerWidth;
+
+	if(screenWidth <= 627) {
+		sidebar.style.display = 'none';
+		sidebar.setAttribute('data-state', 'hide');
+	} else {
+		sidebar.style.display = 'block';
+		sidebar.setAttribute('data-state', 'show');
+	}
 });
 
 renderProductsContainer();
