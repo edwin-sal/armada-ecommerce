@@ -36,7 +36,7 @@ function renderCartSections() {
 
 					<span class="cart-item-final-price">₱${(item.price*item.itemCount).toLocaleString()}</span>
 
-					<button class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
+					<button data-item-id="${item.id}" class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
 				</li>
 			`
 		});
@@ -59,8 +59,8 @@ function renderCartSections() {
 	document.getElementById('cart-items-count').innerText = `${user.cart.length} items`;
 
 
+	// Evenet listener for adding/reducing cart items
 	const quantityButtonElements = document.querySelectorAll('.quantity-control');
-
 	quantityButtonElements.forEach(button => {
 		button.addEventListener('click', function() {
 			const user = JSON.parse(localStorage.getItem('user'));
@@ -90,6 +90,28 @@ function renderCartSections() {
 				}
 			}
 
+			renderCartSections();
+		});
+	});
+
+	// Event listener for removing cart item
+	document.querySelectorAll('.delete-cart-item').forEach(deleteButton => {
+		deleteButton.addEventListener('click', function() {
+			const user = JSON.parse(localStorage.getItem('user'));
+			const accounts = JSON.parse(localStorage.getItem('accounts'));
+			const itemId = Number(this.getAttribute('data-item-id'));
+			console.log(itemId);
+
+			const filteredCart = user.cart.filter(item => item.id !== itemId);
+			user.cart = [...filteredCart];
+
+			// Update user object
+			localStorage.setItem('user', JSON.stringify(user));
+
+			// Update accounts array
+			localStorage.setItem('accounts', JSON.stringify(accounts));
+
+			// Re-render with updated values
 			renderCartSections();
 		});
 	});
