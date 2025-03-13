@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Beng & Beng - Home</title>
+	<link rel="stylesheet" href="./styles/index.css">
+	<link rel="stylesheet" href="./styles/header.css">
+</head>
+<body>
+	<header>
+		<div class="header-content">
+			<button class="sidebar-button" id="sidebar-button">
+				<img src="./images/icons/menu.svg" alt="Hamburger menu">
+			</button>
+
+			<a href="./index.html">
+				<img class="header-logo" src="./images/logos/logo_transparent.png" alt="Bang & bang logo">
+			</a>
+
+			<form id="search-form" class="search-bar">
+				<input id="search-input" type="text" placeholder="Find your perfect firearm">
+				<button type="submit">
+					<img src="./images/icons/search.svg" alt="Search icon">
+				</button>
+			</form>
+
+			<a class="cart-link" href="./pages/cart.html">
+				<img src="./images/icons/cart.svg" alt="Shopping cart icon">
+				<span id="cart-count">0</span>
+			</a>
+
+			<div class="profile-container">
+				<button class="profile-rounded" id="profile-name">BB</button>
+
+				<button class="logout hide" id="logout">
+					Logout
+					<img src="./images/icons/logout.svg" alt="Logout icon">
+				</button>
+			</div>
+			
+			<a href="./pages/login.html" id="login-button" class="login">Login</a>
+			<a href="./pages/signup.html" id="signup-button" class="signup">Signup</a>
+		</div>
+	</header>
+
+	<main>
+		<aside id="sidebar" data-state="show">
+			<ul class="filter-container">
+				<li class="dropdown">
+					<button class="dropdown-button" data-current-mode="show" data-type="category" data-add-src="add_pink.svg" data-remove-src="remove_pink.svg">
+						Category
+						<img src="./images/icons/remove_pink.svg" alt="Add icon">
+					</button>
+					
+				</li>
+				<li class="category-items">
+					<label for="all">
+						<input type="radio" id="all" name="category" value="all" checked>
+						All
+					</label>
+
+					<label for="revolver">
+						<input type="radio" id="revolver" name="category" value="revolver">
+						Revolver
+					</label>
+
+					<label for="pistol">
+						<input type="radio" id="pistol" name="category" value="pistol">
+						Pistol
+					</label>
+
+					<label for="shotgun">
+						<input type="radio" id="shotgun" name="category" value="shotgun">
+						Shotgun
+					</label>
+
+					<label for="submachine-gun">
+						<input type="radio" id="submachine-gun" name="category" value="submachine-gun">
+						Submachine gun
+					</label>
+
+					<label for="assault-rifle">
+						<input type="radio" id="assault-rifle" name="category" value="assault-rifle">
+						Assault rifle
+					</label>
+
+					<label for="sniper-rifle">
+						<input type="radio" id="sniper-rifle" name="category" value="sniper-rifle">
+						Sniper rifle
+					</label>
+				</li>	
+
+				<li class="dropdown">
+					<button class="dropdown-button" data-current-mode="show" data-type="price" data-add-src="add_pink.svg" data-remove-src="remove_pink.svg">
+						Price
+						<img src="./images/icons/remove_pink.svg" alt="Add icon">
+					</button>
+				</li>
+				<li class="price-items">
+					<label for="randopm-price">
+						<input type="radio" id="randopm-price" name="price-sort" value="random-price" checked>
+						Random
+					</label>
+
+					<label for="low-to-high">
+						<input type="radio" id="low-to-high" name="price-sort" value="low-to-high">
+						Low to High
+					</label>
+
+					<label for="high-to-low">
+						<input type="radio" id="high-to-low" name="price-sort" value="high-to-low">
+						High to Low
+					</label>
+				</li>
+			</ul>
+		</aside>
+		
+		<section class="products-section">
+			<ul class="products-container">
+			</ul>
+		</section>
+		<p id="notification" class="notification">Notification! <img src="./images/icons/notification.svg" alt="Notification icon"></p>
+	</main>
+
+	<script type="module" src="./scripts/products.js"></script>
+	<script type="module" src="./scripts/homepage.js"></script>
+	<script type="module" src="./scripts/header.js"></script>
+</body>
+</html>

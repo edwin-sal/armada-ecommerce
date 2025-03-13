@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Beng & Beng - Cart</title>
+	<link rel="stylesheet" href="../styles/header.css">
+	<link rel="stylesheet" href="../styles/cart.css">
+	<link rel="stylesheet" href="../styles/modal.css">
+</head>
+
+<body>
+	<header>
+		<div class="header-content">
+			<a href="../index.html">
+				<img class="header-logo" src="../images/logos/logo_transparent.png" alt="Bang & bang logo">
+			</a>
+
+			<form id="search-form" class="search-bar">
+				<input id="search-input" type="text" placeholder="Find your perfect firearm">
+				<button type="submit">
+					<img src="../images/icons/search.svg" alt="Search icon">
+				</button>
+			</form>
+
+			<div class="profile-container">
+				<button class="profile-rounded" id="profile-name">BB</button>
+
+				<button class="logout hide" id="logout">
+					Logout
+					<img src="../images/icons/logout.svg" alt="Logout icon">
+				</button>
+			</div>
+
+			<a href="../login_signup_page/login.html" id="login-button" class="login">Login</a>
+			<a href="../login_signup_page/signup.html" id="signup-button" class="signup">Signup</a>
+		</div>
+	</header>
+
+	<main>
+		<section class="cart-items-section">
+			<div class="cart-items-header">
+				<h1>Shopping Cart</h1>
+				<h2 id="cart-items-count">3 Items</h2>
+			</div>
+
+			<ul class="cart-items-container">
+				<li class="cart-item cart-labels">
+					<span>Product details</span>
+					<span>Quantity</span>
+					<span>Price</span>
+					<span>Final Price</span>
+					<span>Remove</span>
+				</li>
+
+				<div id="cart-item-wrapper">
+					<!-- <li class="cart-item">
+						<div class="image-container">
+							<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
+
+							<span class="cart-item-name">NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER</span>
+						</div>
+						
+
+						<div class="quantity-container">
+							<button class="quantity-control" data-mode="reduce">-</button>
+							<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
+							<button class="quantity-control" data-mode="add">+</button>
+						</div>
+						
+						<span class="cart-item-price">₱8,999</span>
+
+						<span class="cart-item-final-price">₱17,998</span>
+
+						<button class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
+					</li>
+					<li class="cart-item">
+						<div class="image-container">
+							<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
+
+							<span class="cart-item-name">NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER</span>
+						</div>
+						
+
+						<div class="quantity-container">
+							<button class="quantity-control" data-mode="reduce">-</button>
+							<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
+							<button class="quantity-control" data-mode="add">+</button>
+						</div>
+						
+						<span class="cart-item-price">₱8,999</span>
+
+						<span class="cart-item-final-price">₱17,998</span>
+
+						<button class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
+					</li> -->
+				</div>
+				<!-- <li class="cart-item">
+					<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
+
+					<div class="product-info-container">
+						<span class="cart-item-name">NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER</span>
+						<span class="cart-item-price">₱8,999</span>
+					</div>
+
+					<div class="quantity-container">
+						<button class="quantity-control" data-mode="reduce">-</button>
+						<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
+						<button class="quantity-control" data-mode="add">+</button>
+					</div>
+				</li> -->
+			</ul>
+		</section>
+
+		<section class="shipping-container">
+			<h2>Shipping Information</h2>
+			<form id="shipping-form">
+				<div class="name-container">
+					<input required type="text" placeholder="Firt Name">
+					<input required type="text" placeholder="Last Name">
+				</div>
+
+				<input required class="address" type="text" placeholder="Address">
+				<input class="address" type="text" placeholder="Address 2">
+
+				<div class="more-address-container">
+					<input required type="text" placeholder="City">
+					<input required type="text" placeholder="Municipality">
+					<input required type="text" placeholder="Zip Code">
+				</div>
+
+				<div class="summary-container">
+					<h3>Total Summary</h3>
+
+					<p class="items-price-container">
+						Items
+						<span id="items" class="price">₱8,999</span>
+					</p>
+
+					<p class="shipping-fee-price-container">
+						Shipping Fee
+						<span id="shipping-fee" class="price">FREE</span>
+					</p>
+
+					<p class="total-container">
+						Total Cost
+						<span id="total-cost" class="price">₱9,057</span>
+					</p>
+
+					<input class="submit-checkout" type="submit" value="Proceed to Checkout">
+				</div>
+			</form>
+		</section>
+	</main>
+
+	<div id="payment-modal" class="overlay" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+		<div class="modal">
+			<div class="modal-header">
+				<div class="payment-logos">
+					<div class="company-logo">
+						<img src="../images/logos/logo_transparent.png" alt="Beng & Beng Logo">
+					</div>
+					<img class="card-logo" src="../images/logos/visa.png" alt="Visa">
+					<img class="card-logo" src="../images/logos/mastercard.png" alt="Mastercard">
+				</div>
+				<button id="close-button" class="close-button" aria-label="Close">&times;</button>
+			</div>
+
+			<section class="modal-body">
+				<form class="card-details" id="payment-form">
+					<h2 id="modal-title">Card Details</h2>
+					<div class="form-group">
+						<input type="text" id="card-name" class="form-control" placeholder="Card Name" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="card-number" class="form-control" placeholder="Card Number" required
+							pattern="[0-9]*" inputmode="numeric">
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<input type="text" id="expiration" class="form-control" placeholder="Expiration" required>
+						</div>
+						<div class="form-group">
+							<input type="text" id="cvc" class="form-control" placeholder="CVC" required pattern="[0-9]*"
+								inputmode="numeric">
+						</div>
+					</div>
+				</form>
+			</section>
+
+			<div class="modal-footer">
+				<div class="total-section">
+					<span class="total-label">Total Amount</span>
+					<span id="ammount-to-pay" class="total-amount" aria-live="polite">₱0</span>
+				</div>
+				<button type="submit" form="payment-form" class="pay-button">Pay</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="module" src="../scripts/header.js"></script>
+	<script type="module" src="../scripts/cart.js"></script>
+</body>
+
+</html>

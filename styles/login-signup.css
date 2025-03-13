@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --camo-dark-brown: #2b1b19;
+    --camo-light-green: #8f9779;
+    --camo-light-tan: #d6caab;
+    --camo-accent: #FF9E95;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.logo-container {
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+}
+
+.logo-container img {
+    width: 300px;
+}
+
+.auth-container {
+    background-color: var(--camo-light-tan);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(93, 74, 51, 0.2);
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.form-container {
+    padding: 40px;
+    width: 70%;
+    border-left: 3px solid var(--camo-accent);
+}
+
+.form-title {
+    font-size: 22px;
+    color: var(--camo-dark-brown);
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.auth-message {
+    font-size: 14px;
+    color: var(--camo-dark-brown);
+    margin-bottom: 30px;
+}
+
+.auth-message a {
+    color: var(--camo-accent);
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+form input {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--camo-light-green);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--camo-dark-brown);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--camo-accent);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--camo-dark-brown);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 8px;
+    accent-color: var(--camo-dark-brown);
+}
+
+.forgot-password {
+    color: var(--camo-dark-brown);
+    text-decoration: none;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--camo-dark-brown);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-auth:hover {
+    background-color: var(--camo-accent);
+}
+
+.image-container {
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#warning-msg {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 24px;
+}
+
+.fade {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.3s ease; /* Adjust duration and timing as needed */
+}
+
+.fade.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 100%;
+    }
+    
+    .image-container {
+        display: none;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Beng & Beng - View Product</title>
+	<link rel="stylesheet" href="../styles/product.css">
+	<link rel="stylesheet" href="../styles/header.css">
+</head>
+<body>
+	<header>
+		<div class="header-content">
+			<a href="../index.html">
+				<img id="main-logo" class="header-logo" src="../images/logos/logo_transparent.png" alt="Bang & bang logo">
+				<img id="alt-logo" class="header-logo" src="../images/logos/logo_vertical.png" alt="Bang & bang logo">
+			</a>
+
+			<form id="search-form" class="search-bar">
+				<input id="search-input" type="text" placeholder="Find your perfect firearm">
+				<button type="submit">
+					<img src="../images/icons/search.svg" alt="Search icon">
+				</button>
+			</form>
+
+			<a class="cart-link" href="../pages/cart.html">
+				<img src="../images/icons/cart.svg" alt="Shopping cart icon">
+				<span id="cart-count">0</span>
+			</a>
+
+			<div class="profile-container">
+				<button class="profile-rounded" id="profile-name">ES</button>
+
+				<button class="logout hide" id="logout">
+					Logout
+					<img src="../../images/icons/logout.svg" alt="Logout icon">
+				</button>
+			</div>
+
+			<a href="./login.html" id="login-button" class="login">Login</a>
+			<a href="./signup.html" id="signup-button" class="signup">Signup</a>
+		</div>
+	</header>
+
+	<main>
+		<section id="product-view-section" class="product-view-section">
+			
+		</section>
+
+		<section id="similar-section" class="similar-section">
+			<h2>You may also like</h2>
+
+			<ul class="similar-items-container">
+				
+			</ul>
+		</section>
+	</main>
+
+	<script type="module" src="../scripts/account.js"></script>
+	<script type="module" src="../scripts/products.js"></script>
+	<script type="module" src="../scripts/product-view.js"></script>
+	<script src="../scripts/header.js"></script>
+</body>
+</html>
