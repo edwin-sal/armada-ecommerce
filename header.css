@@ -102,7 +102,7 @@ header {
 	display: inline-block;
 	
 	border-radius: 50%;
-	/* display: none; */
+	display: none;
 }
 
 .logout {
@@ -123,8 +123,9 @@ header {
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.login,
-.signup {
+#login,
+#signup,
+#logout {
 	font-family: inherit;
 	height: 3rem;
 	border: none;
@@ -133,18 +134,221 @@ header {
 	font-weight: 500;
 	width: 5rem;
 	font-size: 0.875rem;
-	display: none;
+	/* display: none; */
 }
 
-.signup {
+#signup {
 	background-color: #2b1b19;
 	color: white;
 }
-
-.login {
+#login {
 	background-color: #dfdddd;
 	border: 2px solid #2b1b19;
 	margin-right: 5px;
+}
+#logout {
+	display: none;
+	background-color: #dfdddd;
+	border: 2px solid #2b1b19;
+	margin-left: 10px;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 500px;
+    max-width: 100%;
+	border-radius: 20px;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 20px;
+    color: #6e1b1b;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tab.active {
+    border-bottom: 3px solid #6e1b1b;
+    color: #6e1b1b;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.auth-button {
+    background-color: #6e1b1b;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #5a1717;
+}
+
+.forgotten-password {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.forgotten-password a {
+    color: #6e1b1b;
+    text-decoration: none;
+}
+
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.google {
+    background-color: #db4437;
+}
+
+.signup-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-note a {
+    color: #6e1b1b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hide content that's not active */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
 }
 
 .hide {
