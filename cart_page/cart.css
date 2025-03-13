@@ -238,6 +238,10 @@ main {
 		font-size: 0.7rem;
 	}
 
+	.image-container img {
+		padding: 0;
+	}
+
 	.quantity-container input {
 		font-size: 0.7rem;
 		width: 1.2rem;
@@ -246,5 +250,10 @@ main {
 	.quantity-container button {
 		width: 1rem;
 		cursor: pointer;
+	}
+
+	.cart-item-price,
+	.cart-item-final-price {
+		font-size: 0.7rem;
 	}
 }

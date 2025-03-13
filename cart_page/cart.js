@@ -119,9 +119,28 @@ function renderCartSections() {
 	});
 
 	// Event listener for proceeding to checkout
+	const paymentModal = document.getElementById('payment-modal');
 	document.getElementById('shipping-form').addEventListener('submit', function(event) {
 		event.preventDefault();
+
+		// Show payment modal
+		paymentModal.style.display = 'flex';
+
+		// Update the ammount to pay inside modal
+		document.getElementById('ammount-to-pay').innerText = `₱${totalCost.toLocaleString()}`;
 	})
+
+	// Add event listener for closing the modal
+	document.getElementById('close-button').addEventListener('click', function() {
+		paymentModal.style.display = 'none';
+	});
+
+	// Show payment success
+	document.getElementById('payment-form').addEventListener('submit', function(event) {
+		event.preventDefault();
+
+		window.location.href = 'https://icpih.com/media-intestinal-health-ihsig/PAYMENT-SUCCESS.png'
+	});
 }
 
 renderCartSections();
