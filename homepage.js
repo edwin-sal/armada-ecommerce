@@ -66,7 +66,7 @@ function renderProductsContainer() {
 						</div>
 					</div>
 				</a>
-				<button class="quick-add-to-cart">Add to Cart</button>
+				<button class="quick-add-to-cart" data-product-id="${product.id}">Add to Cart</button>
 			</li>
 		`;
 	});
@@ -187,3 +187,60 @@ window.addEventListener('resize', function() {
 });
 
 renderProductsContainer();
+
+/* Add to cart using the quick add to cart button  */
+document.querySelectorAll('.quick-add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+		const productId = Number(this.getAttribute('data-product-id'));
+
+		// Get the item to add
+		let itemToAdd = null;
+		for(let i = 0; i < products.length; i++) {
+			if(products[i].id === productId) {
+				itemToAdd = {...products[i], itemCount: 1};
+				break;
+			}
+		}
+
+		console.log(itemToAdd);
+		
+		// Get the userInfo
+		const userInfo = JSON.parse(localStorage.getItem('user'));
+
+		if(!userInfo) {
+			alert('Not logged in');
+			window.location.href = '../login_signup_page/login.html' // Navigate user to login page
+			return;
+		}
+
+		// Check if user already has the item in their cart
+		if(userInfo.cart.length > 0) {
+			let isAlreadyAdded = false;
+
+			for(let i = 0; i < userInfo.cart.length; i++) {
+				if(userInfo.cart[i].id === itemToAdd.id) {
+					userInfo.cart[i].itemCount++;
+					isAlreadyAdded = true;
+					alert('Item already added!');
+					break;
+				}
+			}
+
+			if(!isAlreadyAdded) {
+				userInfo.cart.push(itemToAdd);
+				alert('Item added');
+			}
+
+		} else {
+			if(userInfo.cart.length === 0) {
+				userInfo.cart.push(itemToAdd);
+				alert('Item added');
+			}
+		}
+
+		localStorage.setItem('user', JSON.stringify(userInfo));
+
+		// Update cart count
+		document.getElementById('cart-count').innerText = userInfo.cart.length;
+	});
+});

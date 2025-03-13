@@ -18,6 +18,9 @@ if(user) {
 	// Hide login/signup button
 	loginButton.style.display = 'none';
 	signupButton.style.display = 'none';
+
+	// Show cart count
+	document.getElementById('cart-count').innerText = user.cart.length;
 } else {
 	profileName.style.display = 'none';
 }
