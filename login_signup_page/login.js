@@ -28,6 +28,8 @@ loginForm.addEventListener('submit', function(event) {
 			warningMsg.classList.remove('show');
 		}, 3000);
 
+		localStorage.removeItem('user');
+
 		return
 	}
 

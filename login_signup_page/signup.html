@@ -16,12 +16,12 @@
             <h2 class="form-title">Signup to order.</h2>
             <p class="auth-message">Already a member? <a href="login.html">Login here.</a></p>
             
-            <form>
-                <input type="text" class="form-control" placeholder="First Name">
-                <input type="text" class="form-control" placeholder="Last Name">
-                <input type="email" class="form-control" placeholder="Email">
-                <input type="password" class="form-control" placeholder="Password">
-                <input type="password" class="form-control" placeholder="Confirm Password">
+            <form id="signup-form">
+                <input id="first-name" type="text" class="form-control" placeholder="First Name">
+                <input id="last-name" type="text" class="form-control" placeholder="Last Name">
+                <input id="email" type="email" class="form-control" placeholder="Email">
+                <input id="password" type="password" class="form-control" placeholder="Password">
+                <input id="confirm-password" type="password" class="form-control" placeholder="Confirm Password">
                 <button type="submit" class="btn-auth">Signup</button>
             </form>
         </div>
@@ -30,5 +30,8 @@
             <img src="asset/guns.jpg" alt="">
         </div>
     </div>
+
+    <script type="module" src="../account.js"></script>
+    <script type="module" src="./signup.js"></script>
 </body>
 </html>

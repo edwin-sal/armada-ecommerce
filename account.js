@@ -1,4 +1,4 @@
-export const accounts = [
+export let accounts = [
 	{
 		id: 0,
 		firstName: 'admin',
@@ -15,6 +15,7 @@ export const accounts = [
 ];
 
 export function login(userEmail, userPassword) {
+	updateAccounts();
 	let matchedAccount = null;
 
 	for(let i = 0; i < accounts.length; i++) {
@@ -26,4 +27,24 @@ export function login(userEmail, userPassword) {
  	}
 
 	return matchedAccount;
+}
+
+export function signup(userInfo) {
+	accounts.push({
+		id: accounts.length + 1,
+		firstName: userInfo.firstName,
+		lastName: userInfo.lastName,
+		email: userInfo.email,
+		password: userInfo.password,
+		cart: [],
+	});
+
+	console.log(accounts);
+}
+
+export function updateAccounts() {
+	const updatedAccounts = JSON.parse(localStorage.getItem('accounts'));
+	accounts = [...updatedAccounts];
+
+	console.log(accounts);
 }
