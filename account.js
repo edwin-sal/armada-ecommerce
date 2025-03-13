@@ -55,10 +55,12 @@ export function updateAccounts() {
 	// console.log(accounts);
 }
 
-updateAccounts();
+
 
 // Use default accounts if localStorage is empty
 const savedAccounts =  JSON.parse(localStorage.getItem('accounts'));
 if(!savedAccounts) {
 	localStorage.setItem('accounts', JSON.stringify(accounts));
 }
+
+updateAccounts();

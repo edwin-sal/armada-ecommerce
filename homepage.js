@@ -238,7 +238,19 @@ document.querySelectorAll('.quick-add-to-cart').forEach(button => {
 			}
 		}
 
+		// Update user object
 		localStorage.setItem('user', JSON.stringify(userInfo));
+
+		// Update accounts object
+		let accounts = JSON.parse(localStorage.getItem('accounts'));
+		for(let i = 0; i < accounts.length; i++) {
+			if(accounts[i].id === userInfo.id) {
+				accounts[i] = {...userInfo};
+				break;
+			}
+		}
+		localStorage.setItem('accounts', JSON.stringify(accounts));
+
 
 		// Update cart count
 		document.getElementById('cart-count').innerText = userInfo.cart.length;
