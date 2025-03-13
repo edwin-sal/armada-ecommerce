@@ -4,8 +4,6 @@ if(!user) {
 	window.location.href = '../index.html'
 }
 
-
-
 /* Render the 2 main secetions of cart page */
 function renderCartSections() {
 	const user = JSON.parse(localStorage.getItem('user'));
@@ -119,6 +117,11 @@ function renderCartSections() {
 			renderCartSections();
 		});
 	});
+
+	// Event listener for proceeding to checkout
+	document.getElementById('shipping-form').addEventListener('submit', function(event) {
+		event.preventDefault();
+	})
 }
 
 renderCartSections();
