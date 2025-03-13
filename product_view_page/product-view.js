@@ -181,7 +181,7 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
 	const itemToAdd = {...productData, itemCount: itemCount};
 
 	if(!userInfo) {
-		alert('Not logged in');
+		console.error('Not logged in');
 		window.location.href = '../login_signup_page/login.html' // Navigate user to login page
 		return;
 	}
@@ -194,20 +194,20 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
 			if(userInfo.cart[i].id === itemToAdd.id) {
 				userInfo.cart[i].itemCount += itemCount;
 				isAlreadyAdded = true;
-				alert('Item already added!');
+				console.log('Item already added!');
 				break;
 			}
 		}
 
 		if(!isAlreadyAdded) {
 			userInfo.cart.push(itemToAdd);
-			alert('Item added');
+			console.log('Item added');
 		}
 
 	} else {
 		if(userInfo.cart.length === 0) {
 			userInfo.cart.push(itemToAdd);
-			alert('Item added');
+			console.log('Item added');
 		}
 	}
 

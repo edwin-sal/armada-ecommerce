@@ -4,6 +4,7 @@ import products from './products.js'
 let selectedCategory = 'all';
 let selectedPriceOrder = 'random-price';
 let searchKeyword = '';
+let notifTimeoutId;
 
 /* 
 	This should be useful if the user used search bar outside the homepage.
@@ -208,7 +209,7 @@ document.querySelectorAll('.quick-add-to-cart').forEach(button => {
 		const userInfo = JSON.parse(localStorage.getItem('user'));
 
 		if(!userInfo) {
-			alert('Not logged in');
+			console.error('Not logged in');
 			window.location.href = '../login_signup_page/login.html' // Navigate user to login page
 			return;
 		}
@@ -221,20 +222,23 @@ document.querySelectorAll('.quick-add-to-cart').forEach(button => {
 				if(userInfo.cart[i].id === itemToAdd.id) {
 					userInfo.cart[i].itemCount++;
 					isAlreadyAdded = true;
-					alert('Item already added!');
+					console.log('Item already added!');
+					showNotification('Item already added!');
 					break;
 				}
 			}
 
 			if(!isAlreadyAdded) {
 				userInfo.cart.push(itemToAdd);
-				alert('Item added');
+				console.log('Item added');
+				showNotification('Item added');
 			}
 
 		} else {
 			if(userInfo.cart.length === 0) {
 				userInfo.cart.push(itemToAdd);
-				alert('Item added');
+				console.log('Item added');
+				showNotification('Item added');
 			}
 		}
 
@@ -256,3 +260,16 @@ document.querySelectorAll('.quick-add-to-cart').forEach(button => {
 		document.getElementById('cart-count').innerText = userInfo.cart.length;
 	});
 });
+
+/* Show notification for 2 seconds */
+function showNotification(message) {
+	const notification = document.getElementById('notification');
+	notification.innerHTML = `${message}`;
+	notification.style.display = 'block';
+
+	clearTimeout(notifTimeoutId);
+
+	notifTimeoutId = setTimeout(function() {
+		notification.style.display = 'none';
+	}, 500);
+}
