@@ -51,46 +51,48 @@
 					<span>Remove</span>
 				</li>
 
-				<li class="cart-item">
-					<div class="image-container">
-						<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
+				<div id="cart-item-wrapper">
+					<!-- <li class="cart-item">
+						<div class="image-container">
+							<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
 
-						<span class="cart-item-name">NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER</span>
-					</div>
-					
+							<span class="cart-item-name">NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER</span>
+						</div>
+						
 
-					<div class="quantity-container">
-						<button class="quantity-control" data-mode="reduce">-</button>
-						<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
-						<button class="quantity-control" data-mode="add">+</button>
-					</div>
-					
-					<span class="cart-item-price">₱8,999</span>
+						<div class="quantity-container">
+							<button class="quantity-control" data-mode="reduce">-</button>
+							<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
+							<button class="quantity-control" data-mode="add">+</button>
+						</div>
+						
+						<span class="cart-item-price">₱8,999</span>
 
-					<span class="cart-item-final-price">₱17,998</span>
+						<span class="cart-item-final-price">₱17,998</span>
 
-					<button class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
-				</li>
-				<li class="cart-item">
-					<div class="image-container">
-						<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
+						<button class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
+					</li>
+					<li class="cart-item">
+						<div class="image-container">
+							<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
 
-						<span class="cart-item-name">NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER</span>
-					</div>
-					
+							<span class="cart-item-name">NEW MODEL BLACKHAWK 357 MAGNUM SINGLE ACTION REVOLVER</span>
+						</div>
+						
 
-					<div class="quantity-container">
-						<button class="quantity-control" data-mode="reduce">-</button>
-						<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
-						<button class="quantity-control" data-mode="add">+</button>
-					</div>
-					
-					<span class="cart-item-price">₱8,999</span>
+						<div class="quantity-container">
+							<button class="quantity-control" data-mode="reduce">-</button>
+							<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="1">
+							<button class="quantity-control" data-mode="add">+</button>
+						</div>
+						
+						<span class="cart-item-price">₱8,999</span>
 
-					<span class="cart-item-final-price">₱17,998</span>
+						<span class="cart-item-final-price">₱17,998</span>
 
-					<button class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
-				</li>
+						<button class="delete-cart-item"><img src="../images/icons/trash.svg" alt="Trash icon"></button>
+					</li> -->
+				</div>
 				<!-- <li class="cart-item">
 					<img src="https://www.brownells.com/cdn-cgi/image/width=1920,format=auto,fit=crop/globalassets/10001/24/100403658_1w.jpg" alt="Product thumbnail">
 
@@ -130,17 +132,17 @@
 					
 					<p class="items-price-container">
 						Items
-						<span class="price">₱8,999</span>
+						<span id="items" class="price">₱8,999</span>
 					</p>
 
 					<p class="shipping-fee-price-container">
 						Shipping Fee
-						<span class="price">₱58</span>
+						<span id="shipping-fee" class="price">FREE</span>
 					</p>
 
 					<p class="total-container">
 						Total Cost
-						<span class="price">₱9,057</span>
+						<span id="total-cost" class="price">₱9,057</span>
 					</p>
 
 					<input class="submit-checkout" type="submit" value="Proceed to Checkout">

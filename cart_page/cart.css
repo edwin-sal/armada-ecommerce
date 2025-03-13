@@ -67,7 +67,7 @@ main {
 
 .cart-item {
 	display: grid;
-	grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 4fr 1fr 1fr 1fr 0.4fr;
 	gap: 1rem;
 	align-items: center;
 	font-size: 0.875rem;
@@ -201,4 +201,42 @@ main {
 
 .submit-checkout:hover {
 	background-color: #d5d1d1;
+}
+
+@media screen and (max-width: 985px) {
+	main {
+		flex-direction: column;
+	}
+
+	.cart-items-section {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.image-container img {
+		max-width: 80px;
+	}
+
+	.cart-item > * {
+		min-width: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.cart-item-name {
+		color: red;
+		font-size: 0.7rem;
+	}
+
+	.quantity-container input {
+		font-size: 0.7rem;
+		width: 1.2rem;
+	}
+
+	.quantity-container button {
+		width: 1rem;
+		cursor: pointer;
+	}
 }
