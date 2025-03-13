@@ -124,6 +124,7 @@ aside {
 	gap: 1rem;
 	padding: 1rem;
 	align-items: stretch;
+	padding-bottom: 4rem;
 }
 
 .few-item {
@@ -214,6 +215,11 @@ aside {
 }
 
 @media screen and (max-width: 627px) {
+
+	aside {
+		display: none;
+	}
+
 	.header-logo {
 		display: none;
 	}

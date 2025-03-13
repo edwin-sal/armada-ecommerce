@@ -27,11 +27,11 @@
 
 			<a class="cart-link" href="#">
 				<img src="./images/icons/cart.svg" alt="Shopping cart icon">
-				<span>0</span>
+				<span id="cart-count">0</span>
 			</a>
 
 			<div class="profile-container">
-				<button class="profile-rounded" id="profile-name">ES</button>
+				<button class="profile-rounded" id="profile-name">BB</button>
 
 				<button class="logout hide" id="logout">
 					Logout
@@ -39,8 +39,8 @@
 				</button>
 			</div>
 			
-			<button class="login">Login</button>
-			<button class="signup">Signup</button>
+			<a href="../login_signup_page/login.html" id="login-button" class="login">Login</a>
+			<a href="../login_signup_page/signup.html" id="signup-button" class="signup">Signup</a>
 		</div>
 	</header>
 
@@ -173,6 +173,6 @@
 
 	<script type="module" src="./products.js"></script>
 	<script type="module" src="./homepage.js"></script>
-	<script src="./header.js"></script>
+	<script type="module" src="./header.js"></script>
 </body>
 </html>

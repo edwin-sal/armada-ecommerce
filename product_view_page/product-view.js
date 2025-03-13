@@ -1,9 +1,10 @@
-import products from '../products.js'
+import products from '../products.js';
+import { accounts } from '../account.js'
 import getStars from '../get-stars.js';
 
 let searchKeyword = '';
 
-/* Disable default form behavior */
+console.log(accounts);
 
 /* Get the product from products array */
 const params = new URLSearchParams(window.location.search);
@@ -20,7 +21,7 @@ console.log(productData)
 
 /* Get the number of star rating the product has */
 const starElements = getStars('../images/icons/', productData.ratings);
-console.log(starElements);
+// console.log(starElements);
 
 /* Render product view container */
 const mainElement = document.querySelector('main');
@@ -59,7 +60,7 @@ const productViewContainer = `
 				<button class="quantity-control" data-mode="add">+</button>
 			</div>
 
-			<button type="submit" class="add-to-cart">
+			<button id="add-to-cart" type="submit" class="add-to-cart">
 				<img src="../images/icons/cart.svg" alt="Cart icon">
 				Add to Cart
 			</button>
@@ -111,7 +112,7 @@ itemContainer.forEach(item => {
 
 document.querySelector('.similar-items-container').innerHTML = itemElements;
 
-console.log(itemElements);
+// console.log(itemElements);
 
 /* Define global variables */
 const maingImg = document.getElementById('main-img');
@@ -167,4 +168,62 @@ document.getElementById('search-form').addEventListener('submit', function(event
 
 	const homePageUrl = `../../index.html?search=${searchKeyword}`;
 	window.location.href = homePageUrl;
+});
+
+/* Add item to cart */
+document.getElementById('add-to-cart').addEventListener('click', function() {
+	console.log('hey')
+	// Get the quantity
+	const itemCount = Number(productQuantityInput.value);
+
+	// Get the userInfo
+	const userInfo = JSON.parse(localStorage.getItem('user'));
+	const itemToAdd = {...productData, itemCount: itemCount};
+
+	if(!userInfo) {
+		alert('Not logged in');
+		window.location.href = '../login_signup_page/login.html' // Navigate user to login page
+		return;
+	}
+
+	// Check if user already has the item in their cart
+	if(userInfo.cart.length > 0) {
+		let isAlreadyAdded = false;
+
+		for(let i = 0; i < userInfo.cart.length; i++) {
+			if(userInfo.cart[i].id === itemToAdd.id) {
+				userInfo.cart[i].itemCount += itemCount;
+				isAlreadyAdded = true;
+				alert('Item already added!');
+				break;
+			}
+		}
+
+		if(!isAlreadyAdded) {
+			userInfo.cart.push(itemToAdd);
+			alert('Item added');
+		}
+
+	} else {
+		if(userInfo.cart.length === 0) {
+			userInfo.cart.push(itemToAdd);
+			alert('Item added');
+		}
+	}
+
+	// Update user object
+	localStorage.setItem('user', JSON.stringify(userInfo));
+
+	// Update accounts object
+	let accounts = JSON.parse(localStorage.getItem('accounts'));
+	for(let i = 0; i < accounts.length; i++) {
+		if(accounts[i].id === userInfo.id) {
+			accounts[i] = {...userInfo};
+			break;
+		}
+	}
+	localStorage.setItem('accounts', JSON.stringify(accounts));
+
+	// Update cart count
+	document.getElementById('cart-count').innerText = userInfo.cart.length;
 });

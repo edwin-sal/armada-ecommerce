@@ -2,6 +2,12 @@ import { accounts, login } from "../account.js";
 
 let timeoutId; 
 
+/* Prevent user from accessing this side if they are logged in */
+const user = JSON.parse(localStorage.getItem('user'));
+if(user) {
+	window.location.href = '../../index.html';
+}
+
 /* Show warning message for invalid credentials */
 const warningMsg = document.getElementById('warning-msg');
 

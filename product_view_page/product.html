@@ -11,7 +11,8 @@
 	<header>
 		<div class="header-content">
 			<a href="../index.html">
-				<img class="header-logo" src="../images/logos/logo_transparent.png" alt="Bang & bang logo">
+				<img id="main-logo" class="header-logo" src="../images/logos/logo_transparent.png" alt="Bang & bang logo">
+				<img id="alt-logo" class="header-logo" src="../images/logos/logo_vertical.png" alt="Bang & bang logo">
 			</a>
 
 			<form id="search-form" class="search-bar">
@@ -23,7 +24,7 @@
 
 			<a class="cart-link" href="./cart.html">
 				<img src="../images/icons/cart.svg" alt="Shopping cart icon">
-				<span>0</span>
+				<span id="cart-count">0</span>
 			</a>
 
 			<div class="profile-container">
@@ -35,8 +36,8 @@
 				</button>
 			</div>
 
-			<button class="login">Login</button>
-			<button class="signup">Signup</button>
+			<a href="../login_signup_page/login.html" id="login-button" class="login">Login</a>
+			<a href="../login_signup_page/signup.html" id="signup-button" class="signup">Signup</a>
 		</div>
 	</header>
 
@@ -129,6 +130,7 @@
 		</section>
 	</main>
 
+	<script type="module" src="../account.js"></script>
 	<script type="module" src="../products.js"></script>
 	<script type="module" src="./product-view.js"></script>
 	<script src="../header.js"></script>
