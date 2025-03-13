@@ -1,10 +1,11 @@
-const user = JSON.parse(localStorage.getItem('user'));
-console.log(user.cart);
+
 
 
 
 /* Render the 2 main secetions of cart page */
 function renderCartSections() {
+	const user = JSON.parse(localStorage.getItem('user'));
+
 	let cartItemElements = '';
 	let itemPrice = 0;
 	let shippingFee = 0;
@@ -26,9 +27,9 @@ function renderCartSections() {
 					
 
 					<div class="quantity-container">
-						<button class="quantity-control" data-mode="reduce">-</button>
-						<input id="product-quantity" type="text" class="product-quantity" name="product-quantity" id="product-quantity" value="${item.itemCount}">
-						<button class="quantity-control" data-mode="add">+</button>
+						<button class="quantity-control" data-mode="reduce" data-item-id="${item.id}">-</button>
+						<input type="text" class="product-quantity" name="product-quantity" id="product-quantity${item.id}" value="${item.itemCount}">
+						<button class="quantity-control" data-mode="add" data-item-id="${item.id}">+</button>
 					</div>
 					
 					<span class="cart-item-price">₱${item.price.toLocaleString()}</span>
@@ -52,7 +53,46 @@ function renderCartSections() {
 	// Update the summary content
 	document.getElementById('items').innerText = `₱${itemPrice.toLocaleString()}` 
 	document.getElementById('shipping-fee').innerText = `₱${shippingFee.toLocaleString()}` 
-	document.getElementById('total-cost').innerText = `₱${totalCost.toLocaleString()}` 
+	document.getElementById('total-cost').innerText = `₱${totalCost.toLocaleString()}`
+	
+	// Update the shopping cart header items
+	document.getElementById('cart-items-count').innerText = `${user.cart.length} items`;
+
+
+	const quantityButtonElements = document.querySelectorAll('.quantity-control');
+
+	quantityButtonElements.forEach(button => {
+		button.addEventListener('click', function() {
+			const user = JSON.parse(localStorage.getItem('user'));
+			const accounts = JSON.parse(localStorage.getItem('accounts'));
+			const mode = this.getAttribute('data-mode');
+			const itemId = this.getAttribute('data-item-id');
+
+			// Update user object
+			for(let i = 0; i < user.cart.length; i++) {
+				if(user.cart[i].id == Number(itemId)) {
+					if(mode === 'add') {
+						user.cart[i].itemCount++;
+					} else if(mode === 'reduce' && (user.cart[i].itemCount > 1	)) {
+						user.cart[i].itemCount--;
+					}
+					localStorage.setItem('user', JSON.stringify(user));
+					break;
+				}
+			}
+
+			// Update the accounts array
+			for(let i = 0; i < accounts.length; i++) {
+				if(accounts[i].id === user.id) {
+					accounts[i] = {...user};
+					localStorage.setItem('accounts', JSON.stringify(accounts));
+					break;
+				}
+			}
+
+			renderCartSections();
+		});
+	});
 }
 
 renderCartSections();
