@@ -180,7 +180,4 @@ document.getElementById('sidebar-button').addEventListener('click', function() {
 	});
 });
 
-
-
-
 renderProductsContainer();
