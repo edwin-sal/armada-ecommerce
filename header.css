@@ -134,7 +134,7 @@ header {
 	font-weight: 500;
 	width: 5rem;
 	font-size: 0.875rem;
-	display: none;
+	/* display: none; */
 }
 
 .signup {

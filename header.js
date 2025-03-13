@@ -1,7 +1,28 @@
-/* Toggle show/hide logout button when pressing profile name */
 const profileName = document.getElementById('profile-name');
 const logoutButton = document.getElementById('logout');
+const loginButton = document.getElementById('login-button');
+const signupButton = document.getElementById('signup-button');
 
+/* Control the display of User control */
+const user = JSON.parse(localStorage.getItem('user'));
+console.log(user);
+
+if(user) {
+	// Set the rounded profile name
+	const nameContainer = `${user.firstName} ${user.lastName}`.split(' ');
+	const firstInitial = nameContainer[0][0];
+	const secondInitial = nameContainer[nameContainer.length - 1][0]
+	
+	profileName.innerText = firstInitial + secondInitial;
+
+	// Hide login/signup button
+	loginButton.style.display = 'none';
+	signupButton.style.display = 'none';
+} else {
+	profileName.style.display = 'none';
+}
+
+/* Toggle show/hide logout button when pressing profile name */
 profileName.addEventListener('click', function() {
 	logoutButton.classList.toggle('hide');
 });
@@ -11,3 +32,4 @@ logoutButton.addEventListener('click', function() {
 	localStorage.removeItem('user');
 	window.location.href= './login_signup_page/login.html';
 });
+
