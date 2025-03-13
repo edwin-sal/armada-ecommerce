@@ -52,8 +52,10 @@ export function updateAccounts() {
 	const updatedAccounts = JSON.parse(localStorage.getItem('accounts'));
 	accounts = [...updatedAccounts];
 
-	console.log(accounts);
+	// console.log(accounts);
 }
+
+updateAccounts();
 
 // Use default accounts if localStorage is empty
 const savedAccounts =  JSON.parse(localStorage.getItem('accounts'));

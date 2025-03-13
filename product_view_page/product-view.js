@@ -1,9 +1,10 @@
-import products from '../products.js'
+import products from '../products.js';
+import { accounts } from '../account.js'
 import getStars from '../get-stars.js';
 
 let searchKeyword = '';
 
-/* Disable default form behavior */
+console.log(accounts);
 
 /* Get the product from products array */
 const params = new URLSearchParams(window.location.search);
@@ -20,7 +21,7 @@ console.log(productData)
 
 /* Get the number of star rating the product has */
 const starElements = getStars('../images/icons/', productData.ratings);
-console.log(starElements);
+// console.log(starElements);
 
 /* Render product view container */
 const mainElement = document.querySelector('main');
@@ -59,7 +60,7 @@ const productViewContainer = `
 				<button class="quantity-control" data-mode="add">+</button>
 			</div>
 
-			<button type="submit" class="add-to-cart">
+			<button id="add-to-cart" type="submit" class="add-to-cart">
 				<img src="../images/icons/cart.svg" alt="Cart icon">
 				Add to Cart
 			</button>
@@ -111,7 +112,7 @@ itemContainer.forEach(item => {
 
 document.querySelector('.similar-items-container').innerHTML = itemElements;
 
-console.log(itemElements);
+// console.log(itemElements);
 
 /* Define global variables */
 const maingImg = document.getElementById('main-img');
@@ -167,4 +168,20 @@ document.getElementById('search-form').addEventListener('submit', function(event
 
 	const homePageUrl = `../../index.html?search=${searchKeyword}`;
 	window.location.href = homePageUrl;
+});
+
+/* Add item to cart */
+document.getElementById('add-to-cart').addEventListener('click', function() {
+	// Get the userInfo
+	const userInfo = JSON.parse(localStorage.getItem('user'));
+	console.log(userInfo);
+
+	if(!userInfo) {
+		return;
+	}
+
+
+	// Get the quantity
+	const itemCount = Number(productQuantityInput.value);
+	console.log({...productData, itemCount: itemCount});
 });
