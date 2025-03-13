@@ -1,6 +1,6 @@
-import products from '../products.js';
-import { accounts } from '../account.js'
-import getStars from '../get-stars.js';
+import products from './products.js';
+import { accounts } from './account.js'
+import getStars from './get-stars.js';
 
 let searchKeyword = '';
 
@@ -89,7 +89,7 @@ itemContainer.forEach(item => {
 
 	itemElements += `
 		<li>
-			<a href=".././product_view_page/product.html?id=${item.id}" class="product">
+			<a href="../pages/product.html?id=${item.id}" class="product">
 				<img class="product-img" src="${item.imageURL}" alt="Product image">
 
 				<div class="product-info">
@@ -182,7 +182,7 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
 
 	if(!userInfo) {
 		console.error('Not logged in');
-		window.location.href = '../login_signup_page/login.html' // Navigate user to login page
+		window.location.href = './login.html' // Navigate user to login page
 		return;
 	}
 

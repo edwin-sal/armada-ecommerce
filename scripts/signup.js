@@ -1,11 +1,11 @@
-import { accounts, signup } from "../account.js";
+import { accounts, signup } from "./account.js";
 
 let timeoutId;
 const warningMsg = document.getElementById('warning-msg');
 
 const user = JSON.parse(localStorage.getItem('user'));
 if(user) {	
-	window.location.href = '../../index.html';
+	window.location.href = '../index.html';
 }
 
 const signupForm = document.getElementById('signup-form');
@@ -37,7 +37,7 @@ signupForm.addEventListener('submit', function(event) {
 	localStorage.setItem('user', JSON.stringify(user));
 
 	// Move to home page
-	window.location.href = '../../index.html';
+	window.location.href = '../index.html';
 });
 
 function showWarning(msg) {

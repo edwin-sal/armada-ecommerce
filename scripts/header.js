@@ -41,13 +41,13 @@ logoutButton.addEventListener('click', function() {
 	// Check if user is in product view or home page
 	const currentLocation = window.location.href;
 	if(currentLocation.includes('index.html')) {
-		window.location.href= './login_signup_page/login.html';
+		window.location.href= './pages/login.html';
 	}
 	else if(currentLocation.includes('product.html')) {
-		window.location.href= '../../login_signup_page/login.html';
+		window.location.href= './login.html';
 	}
 	else if(currentLocation.includes('cart.html')) {
-		window.location.href= '../../login_signup_page/login.html';
+		window.location.href= './login.html';
 	}
 	
 });

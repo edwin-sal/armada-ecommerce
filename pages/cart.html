@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cart</title>
-	<link rel="stylesheet" href="../header.css">
-	<link rel="stylesheet" href="./cart.css">
-	<link rel="stylesheet" href="modal.css">
+	<title>Beng & Beng - Cart</title>
+	<link rel="stylesheet" href="../styles/header.css">
+	<link rel="stylesheet" href="../styles/cart.css">
+	<link rel="stylesheet" href="../styles/modal.css">
 </head>
+
 <body>
 	<header>
 		<div class="header-content">
@@ -30,7 +32,7 @@
 					<img src="../images/icons/logout.svg" alt="Logout icon">
 				</button>
 			</div>
-			
+
 			<a href="../login_signup_page/login.html" id="login-button" class="login">Login</a>
 			<a href="../login_signup_page/signup.html" id="signup-button" class="signup">Signup</a>
 		</div>
@@ -114,7 +116,7 @@
 		<section class="shipping-container">
 			<h2>Shipping Information</h2>
 			<form id="shipping-form">
-			    <div class="name-container">
+				<div class="name-container">
 					<input required type="text" placeholder="Firt Name">
 					<input required type="text" placeholder="Last Name">
 				</div>
@@ -130,7 +132,7 @@
 
 				<div class="summary-container">
 					<h3>Total Summary</h3>
-					
+
 					<p class="items-price-container">
 						Items
 						<span id="items" class="price">₱8,999</span>
@@ -164,7 +166,7 @@
 				</div>
 				<button id="close-button" class="close-button" aria-label="Close">&times;</button>
 			</div>
-	
+
 			<section class="modal-body">
 				<form class="card-details" id="payment-form">
 					<h2 id="modal-title">Card Details</h2>
@@ -186,7 +188,7 @@
 					</div>
 				</form>
 			</section>
-	
+
 			<div class="modal-footer">
 				<div class="total-section">
 					<span class="total-label">Total Amount</span>
@@ -197,7 +199,8 @@
 		</div>
 	</div>
 
-	<script type="module" src="../header.js"></script>
-	<script type="module" src="./cart.js"></script>
+	<script type="module" src="../scripts/header.js"></script>
+	<script type="module" src="../scripts/cart.js"></script>
 </body>
+
 </html>

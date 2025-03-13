@@ -50,7 +50,7 @@ function renderProductsContainer() {
 
 		productElements += `
 			<li>
-				<a href="./product_view_page/product.html?id=${product.id}" class="product">
+				<a href="./pages/product.html?id=${product.id}" class="product">
 					<img class="product-img" src="${product.imageURL}" alt="Product image">
 
 					<div class="product-info">
@@ -210,7 +210,7 @@ document.querySelectorAll('.quick-add-to-cart').forEach(button => {
 
 		if(!userInfo) {
 			console.error('Not logged in');
-			window.location.href = '../login_signup_page/login.html' // Navigate user to login page
+			window.location.href = './pages/login.html' // Navigate user to login page
 			return;
 		}
 
