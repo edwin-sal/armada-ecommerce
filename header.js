@@ -30,6 +30,15 @@ profileName.addEventListener('click', function() {
 /* Navigate to Login page after logout */
 logoutButton.addEventListener('click', function() {
 	localStorage.removeItem('user');
-	window.location.href= './login_signup_page/login.html';
+
+	// Check if user is in product view or home page
+	const currentLocation = window.location.href;
+	if(currentLocation.includes('index.html')) {
+		window.location.href= './login_signup_page/login.html';
+	}
+	else if(currentLocation.includes('product.html')) {
+		window.location.href= '../../login_signup_page/login.html';
+	}
+	
 });
 
