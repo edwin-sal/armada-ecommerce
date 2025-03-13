@@ -121,3 +121,84 @@ main {
 	height: auto;
 }
 
+.shipping-container {
+	padding: 1rem;
+	color: #2b1b19;
+}
+
+.shipping-container h2 {
+	padding-bottom: 1rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid lightgray;
+}
+
+#shipping-form input[type="text"] {
+	font-family: inherit;
+	font-size: 0.875rem;
+	padding: 8px;
+	display: block;
+	width: 100%;
+}
+
+.address {
+	margin: 0.5rem 0;
+}
+
+.name-container,
+.more-address-container {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.more-address-container {
+	margin-bottom: 2rem;
+}
+
+.summary-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	font-size: 0.875rem;
+}
+
+.summary-container h2 {
+	font-size: 1.17rem;
+}
+
+.items-price-container,
+.shipping-fee-price-container,
+.total-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.shipping-fee-price-container {
+	margin-bottom: 1rem;
+} 
+
+.total-container {
+	margin: 0 0 1rem 0;
+	border-top: 1px solid lightgray;
+	padding-top: 2rem;
+	font-size: 1rem;
+}
+
+.price {
+	color: #ff9e95;
+	font-weight: 500;
+}
+
+.submit-checkout {
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 1rem;
+	background-color: #dfdddd;
+	border: 1px solid #2b1b19;
+	cursor: pointer;
+	transition: background-color 0.3s ease; 
+}
+
+.submit-checkout:hover {
+	background-color: #d5d1d1;
+}
