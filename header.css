@@ -134,7 +134,15 @@ header {
 	font-weight: 500;
 	width: 5rem;
 	font-size: 0.875rem;
-	/* display: none; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.login:hover,
+.signup:hover {
+	text-decoration: underline;
 }
 
 .signup {
@@ -146,6 +154,7 @@ header {
 	background-color: #dfdddd;
 	border: 2px solid #2b1b19;
 	margin-right: 5px;
+	color: #2b1b19;
 }
 
 .hide {
