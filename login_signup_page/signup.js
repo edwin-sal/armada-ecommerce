@@ -25,7 +25,12 @@ signupForm.addEventListener('submit', function(event) {
 		return;
 	}
 
-	signup({firstName, lastName, email, password});
+	const user = signup({firstName, lastName, email, password});
 
+	// Save to new account to localStorage and sign in the user
 	localStorage.setItem('accounts', JSON.stringify(accounts));
+	localStorage.setItem('user', JSON.stringify(user));
+
+	// Move to home page
+	window.location.href = '../../index.html';
 });

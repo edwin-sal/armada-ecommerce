@@ -30,16 +30,22 @@ export function login(userEmail, userPassword) {
 }
 
 export function signup(userInfo) {
-	accounts.push({
+	updateAccounts();
+
+	const newAccount = {
 		id: accounts.length + 1,
 		firstName: userInfo.firstName,
 		lastName: userInfo.lastName,
 		email: userInfo.email,
 		password: userInfo.password,
 		cart: [],
-	});
+	};
 
+	accounts.push(newAccount);
+
+	localStorage.setItem('accounts', JSON.stringify(accounts));
 	console.log(accounts);
+	return newAccount;
 }
 
 export function updateAccounts() {
@@ -47,4 +53,10 @@ export function updateAccounts() {
 	accounts = [...updatedAccounts];
 
 	console.log(accounts);
+}
+
+// Use default accounts if localStorage is empty
+const savedAccounts =  JSON.parse(localStorage.getItem('accounts'));
+if(!savedAccounts) {
+	localStorage.setItem('accounts', JSON.stringify(accounts));
 }
